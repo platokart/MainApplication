@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    /* Fonts */
+    --font-inter: 'Inter', sans-serif;
+  
+    /* Font sizes */
+    --font-size-base: 16px;
+    --font-size-xl: 20px;
+    --font-size-23xl: 42px;
+    --font-size-6xl: 25px;
+    --font-size-15xl: 34px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --grey-4: #f8f9ff;
+    --primary-2: #ff8a08;
+    --primary-1: #0071c1;
+    --grey-1: #191919;
+    --color-gray-100: rgba(25, 25, 25, 0.25);
+  
+    /* Gaps */
+    --gap-3xs: 10px;
+    --gap-9xs: 4px;
+    --gap-xl: 20px;
+  
+    /* Paddings */
+    --padding-xl: 20px;
+    --padding-137xl: 156px;
+    --padding-13xl: 32px;
+    --padding-5xl: 24px;
+    --padding-lg: 18px;
+    --padding-sm: 14px;
+  
+    /* Border radiuses */
+    --br-3xs: 10px;
+  }
+  .reset-password-container {
+    position: relative;
+    /* padding-left: 50px; */ /* Remove this line */
+    padding: 20px; /* Add padding for space around the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    border-radius: 20px;
+    background-color: white;
+    font-family: Inter; /* Apply Inter font */
+}
+
+
+/* Back link styles */
+.back-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-family: Inter; /* Apply Inter font */
+}
+
+/* Content styles */
+.reset-password-content {
+    background-color: var(--grey-4);
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start; /* Align items to the left */
+    flex-direction: column;
+    position: relative;
+    padding: 40px;
+    max-width: 816px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Title styles */
+.reset-password-title {
+    color: var(--Primary-1, #0071C1);
+    font-size: var(--font-size-23xl);
+    font-weight: 900;
+    line-height: normal;
+    font-family: var(--font-inter);
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Take up full width */
+    margin-bottom: 10px; /* Adjust margin */
+}
+
+.button-container {
+    width: 100%;
+}
+
+/* Text styles */
+.reset-password-text {
+    color: var(--grey-1);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.28px;
+    line-height: normal;
+    font-family: "Inter-Medium", Helvetica;
+    text-align: left; /* Align text to the left */
+    max-width: 90%;
+}
+
+/* Form group styles */
+.reset-password-form .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Label styles */
+.reset-password-form .form-label {
+    color: var(--grey-1);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.28px;
+    line-height: normal;
+    font-family: "Inter-Medium", Helvetica;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* Input styles */
+.reset-password-form .form-input {
+    color: var(--grey-1);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.8px;
+    line-height: normal;
+    font-family: "Inter-Regular", Helvetica;
+    width: 150%; /* Set width to 100% */
+    padding: 10px;
+    border: #ccc; /* Added border for better visibility */
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom:20px;
+    margin-top:6px;
+}
+
+/* Error message styles */
+.error-msg {
+    color: var(--Grey-1, red);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.28px;
+    font-family: Inter; /* Apply Inter font */
+}
+
+/* Button styles */
+.reset-password-btn {
+    background-color: var(--primary-2);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+   
+    width: 150%; /* Set width to 100% */
+    text-align: center;
+
+}
+
+.reset-password-btn:hover {
+    background-color: #ff8000;
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .reset-password-content {
+        padding: 10px;
+    }
+    .reset-password-title {
+        font-size: 24px;
+        font-weight: 900; /* Add bold font weight */
+    }
+    .reset-password-text {
+        font-size: 12px;
+    }
+    .reset-password-form .form-label {
+        font-size: 12px;
+    }
+    .reset-password-form .form-input {
+        width: 100%; /* Increase width for small devices */
+    }
+    .error-msg {
+        font-size: 14px;
+    }
+
+    .reset-password-btn{
+        width: 100%;
+        font-size: 14px;
+        padding:10px;
+    }
+}

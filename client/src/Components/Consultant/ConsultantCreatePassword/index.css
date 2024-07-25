@@ -1,0 +1,253 @@
+/* Container styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+:root {
+    /* Fonts */
+    --font-inter: 'Inter', sans-serif;
+  
+    /* Font sizes */
+    --font-size-base: 16px;
+    --font-size-xl: 20px;
+    --font-size-23xl: 42px;
+    --font-size-6xl: 25px;
+    --font-size-15xl: 34px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --grey-4: #f8f9ff;
+    --primary-2: #ff8a08;
+    --primary-1: #0071c1;
+    --grey-1: #191919;
+    --color-gray-100: rgba(25, 25, 25, 0.25);
+  
+    /* Gaps */
+    --gap-3xs: 10px;
+    --gap-9xs: 4px;
+    --gap-xl: 20px;
+  
+    /* Paddings */
+    --padding-xl: 20px;
+    --padding-137xl: 156px;
+    --padding-13xl: 32px;
+    --padding-5xl: 24px;
+    --padding-lg: 18px;
+    --padding-sm: 14px;
+  
+    /* Border radiuses */
+    --br-3xs: 10px;
+  }
+  
+.create-password-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    border-radius: 20px;
+    background-color: white;
+    font-family: Inter; /* Apply Inter font */
+}
+
+/* Content styles */
+.create-password-content {
+    background-color: var(--grey-4);
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start; /* Align items to the left */
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    max-width: 816px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+/* Title styles */
+.create-password-title {
+    color: var(--Primary-1, #0071C1);
+    font-size: var(--font-size-23xl);
+    font-weight: 900;
+    line-height: normal;
+
+    font-family: var(--font-inter);
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Take up full width */
+    margin-bottom: 10px; /* Adjust margin */
+}
+
+/* Label styles */
+.password-label {
+    color: var(--grey-1);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.28px;
+    line-height: normal;
+    font-family: "Inter-Medium", Helvetica;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* Input container styles */
+.password-input-container {
+    position: relative;
+    width:100%;
+}
+
+/* Input wrapper styles */
+.password-input-wrapper {
+    width: 100%; /* Set width to 100% */
+    display: flex;
+    align-items: center;
+}
+
+
+/* Input styles */
+.create-password-input {
+    color: var(--grey-1);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.8px;
+    line-height: normal;
+    font-family: "Inter-Regular", Helvetica;
+    width: 150%; /* Set width to 100% */
+    padding: 10px;
+    border: #ccc; /* Added border for better visibility */
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom:20px;
+    margin-top:6px;
+}
+
+.error-message {
+    color: red;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.password-rules-list {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.password-rules-list ul {
+    padding-left: 20px;
+}
+
+.password-rules-list li {
+    margin-bottom: 5px;
+}
+
+
+/* Password match text styles */
+.password-match,
+.password-match-error {
+    color: var(--Primary-1, #0071C1);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.28px;
+}
+
+/* Add this CSS to hide the default browser eye icon */
+.create-password-input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none;
+}
+
+/* Eye icon wrapper styles */
+.eye-icon-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Eye icon styles */
+.eye-icon {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Password match error styles */
+.password-match-error {
+    color: #f00;
+    margin-top: 5px;
+}
+
+/* Button styles */
+.create-password-btn {
+    width: 100%;
+    padding: 20px;
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+  font-size: 20px;
+  margin-top: 7px;
+    transition: background-color 0.3s ease;
+}
+
+.create-password-btn:hover {
+    background-color: #ff8000;
+}
+
+/* Link styles */
+.create-password-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Media Queries for responsiveness */
+
+/* Adjust styles for screens up to 768px width */
+@media only screen and (max-width: 768px) {
+    .create-password-container {
+        padding-left: 20px; /* Adjust padding */
+        padding-right: 20px; /* Adjust padding */
+    }
+}
+
+/* Adjust styles for screens up to 576px width */
+@media only screen and (max-width: 576px) {
+    .create-password-container {
+        padding-left: 5px; /* Reduce left padding */
+        padding-right: 5px; /* Reduce right padding */
+        margin-left: 10px; /* Add left margin for space */
+        margin-right: 10px; /* Add right margin for space */
+    }
+    .create-password-content {
+        max-width: 100%; /* Make content width 100% */
+    }
+    .create-password-title {
+        font-size: 24px;
+        letter-spacing: 0.3px; /* Adjust letter spacing */
+    }
+
+    .create-password-input{
+        font-size:12px;
+        padding: 10px;
+    }
+    .create-password-btn{
+        padding:10px;
+        font-size: 15px;
+    }
+    .password-label{
+        font-size: 12px;
+    }
+
+}

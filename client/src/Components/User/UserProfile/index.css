@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap");
+
+.user-profile-profile-container {
+  border-radius: 20px;
+  background: var(--Grey-3, #F8F9FF);
+  padding: 20px;
+  margin: auto;
+  width: 80%;
+  margin-top: 18px;
+  max-width: 600px;
+ 
+  color:black;
+  min-height: 100%;
+}
+
+.user-profile-heading{
+  color: var(--Primary-1, #0071C1);
+  font-family: Inter;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -1.68px;
+}
+
+.user-profile-form .user-profile-form-group {
+  margin-bottom: 15px;
+}
+
+.user-profile-label {
+  color: var(--Grey-1, #191919);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.28px;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon-wrapper {
+  position: absolute;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.user-profile-input-field {
+  padding-left: 40px; 
+  height: 40px; 
+  box-sizing: border-box; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  color:black;
+}
+
+.user-profile-input-field:focus {
+  outline: none; 
+  border-color: #ccc;
+  color:black
+}
+
+.icon-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: #ffffff;
+  border: 0px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.icon-container1 img {
+  height: 20px;
+  width: 20px;
+}
+
+.user-profile-input-field::placeholder {
+  color: var(--Grey-1, #191919);
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.8px;
+}
+
+.user-profile-button-container{
+  border-radius: 10px;
+background: var(--Primary-2, #FF8A08);
+display: flex;
+padding: 14px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+align-self: stretch;
+}
+
+.user-profile-input-field,
+select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  border: 0px  #ffffff;
+  border-radius: 0 4px 4px 0;
+  margin-left: -1px;
+  height: 40px; 
+  box-sizing: border-box;
+}
+
+
+
+.inline-group {
+  display: flex;
+  gap: 20px;
+}
+
+.inline-group > div {
+  flex: 1;
+}
+
+.user-profile-save-button{
+  color: #FFF;
+  text-align: center;
+  background: var(--Primary-2, #FF8A08);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.96px;
+  border-width: 0px;
+
+}
+
+
+/* Responsive Layout */
+@media screen and (max-width: 500px) {
+  .user-profile-profile-container {
+    width: 90%;
+  }
+
+  .input-group {
+    flex-direction: row;
+  }
+
+  .user-profile-input-field,
+  select {
+    width: 100%;
+    
+  }
+
+  .inline-group {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,75 @@
+.chat-notification-item-bg-container{
+    border-radius: 10px;
+    background: #F8F9FF;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    width: 96%;
+    padding: 12px 22px 12px 0px;
+    align-items: center;
+    justify-content: space-between;
+    height: 6%;
+    margin-top: 5px;
+}
+
+.chat-notification-header-profile-container{
+    display: flex;
+    align-items: center;
+}   
+
+.chat-notification-header-btn{
+    font-size: 26px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #2E2E30;
+}
+
+.chat-notification-header-profile-img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 14px;
+}
+
+.chat-notification-header-details-con{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 16px;
+}
+
+.chat-notification-header-buttons-container{
+    display: flex;
+    align-items: center;
+}
+
+.chat-notification-header-name{
+    color: #222831;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px; /* 110% */
+    letter-spacing: -0.086px;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.chat-notification-header-status{
+    font-size: 16px;
+    color: #65B741;
+}
+
+.chat-notification-header-name-span{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: -0.086px;
+    text-transform: capitalize;
+}
+

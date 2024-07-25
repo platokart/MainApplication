@@ -1,0 +1,30 @@
+.chat-screen-history{
+    display: flex;
+    flex-direction: column;
+}
+
+.user{
+    border-radius: 0px 10px 10px 10px;
+background: var(--Primary-4, #9AC8CD);
+display: flex;
+padding: 10px;
+flex-direction: column;
+align-items: flex-start;
+gap: 4px;
+margin: 10px;
+width: 30%;
+align-self: flex-end;
+}
+
+.consultant{
+    border-radius: 10px 0px 10px 10px;
+background: var(--Primary-3, #B7C9F2);
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin: 10px;
+    width: 30%;
+    align-self: flex-start;
+}

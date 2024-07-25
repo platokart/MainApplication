@@ -1,0 +1,311 @@
+@media(min-width:992px){
+    .navbar{
+        background: var(--Grey-3, #F8F9FF);
+        box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+            display: flex;
+        width:95%;
+        height: 10vh;
+        padding: 20px 50px;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        position:fixed;
+    }
+    .hamberg-icon{
+        display: none;
+    }
+    .left-content-logo{
+        color: var(--Primary-1, #0071C1);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 27.3px */
+    }
+    .signin-btn{
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top:20px;
+        gap: 8px;
+        color:#0071C1;
+        background:transparent;
+        border-width:0px;
+    }
+    /* .be-a-customer-btn:hover{
+       height : 70px;
+    } */
+    .right-content-buttons{
+        display:flex;
+    }
+    .be-a-customer-btn{
+        display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin:10px;
+    background:#FF8A08;
+    color:white;
+    padding:15px;
+    border-width:0px;
+    border-radius:10px;
+    
+    background: linear-gradient(45deg, #FF8A08, #FFC107); /* Gradient background */
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for effects */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: relative; /* For pseudo-elements */
+    border-radius: 50px; /* Gives a pill shape */
+    /* clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%); */
+    
+    overflow: hidden; /* For pseudo-elements */
+    }
+    
+    .become-a-consultant-btn{
+        display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin:10px;
+    background:#FF8A08;
+    color:white;
+    padding:15px;
+    border-width:0px;
+    border-radius:10px;
+    background: linear-gradient(45deg, #FF8A08, #FFC107); /* Gradient background */
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for effects */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: relative; /* For pseudo-elements */
+    border-radius: 50px; /* Gives a pill shape */
+    /* clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%); */
+    
+    overflow: hidden; /* For pseudo-elements */
+    }
+    .become-a-consultant-btn:hover{
+            background: linear-gradient(45deg, #FFC107, #FF8A08); /* Reverse gradient on hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+            transform: translateY(-4px) ; /* Slight lift and enlarge on hover */
+        
+    }
+    .become-a-consultant-btn:focus {
+        outline: none; /* Remove default outline */
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(255, 138, 8, 0.3); /* Custom focus shadow */
+    }
+    
+    /* Active effects */
+    .become-a-consultant-btn:active {
+        transform: translateY(0); /* Reset lift */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Original shadow */
+    }
+    .be-a-customer-btn:hover{
+            background: linear-gradient(45deg, #FFC107, #FF8A08); /* Reverse gradient on hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+            transform: translateY(-4px) ; /* Slight lift and enlarge on hover */
+        
+    }
+    .become-a-consultant-btn:focus {
+        outline: none; /* Remove default outline */
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(255, 138, 8, 0.3); /* Custom focus shadow */
+    }
+    
+    /* Active effects */
+    .become-a-consultant-btn:active {
+        transform: translateY(0); /* Reset lift */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Original shadow */
+    }
+    }
+    
+    
+    @media (max-width:576px){
+        .navbar{
+            background: var(--Grey-3, #F8F9FF);
+            box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+                display: flex;
+                justify-content: space-between;
+            width:90%;
+            height: 40px;
+            padding: 20px 50px;
+            align-items: center;
+            flex-shrink: 0;
+            position:fixed;
+        }
+        .right-content-buttons{
+            display: flex;
+       
+        }
+        .be-a-customer-btn{
+            display: none;
+        }
+        .become-a-consultant-btn{
+            display: none;
+        }
+        .hamberg-icon{
+            display: flex;
+            margin-right: 90%;
+            margin-top: 10%;
+        }
+        .right-content-buttons-tab{
+            display: flex;
+          
+        }
+        .signin-btn{
+            display: flex;
+          width: 10%;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            color:#0071C1;
+            background:transparent;
+            border-width:0px;
+            margin-right: 25%;
+        }
+        .be-a-customer-btn-tab{
+            display: flex;
+            width: 75px;
+            padding: 8px;
+            justify-content: center;
+            align-items: center;
+            gap: 7.5px;
+            border-radius: 8px;
+            color:white;
+            border-width:0px;
+            background: var(--Primary-2, #FF8A08);
+            margin: 11px;
+            margin-left: 29%;
+        }
+        .become-a-consultant-btn-tab{
+            display: flex;
+            width: 50%;
+            padding: 8px;
+            justify-content: center;
+            align-items: center;
+            gap: 7.5px;
+            border-radius: 8px;
+            color:white;
+            border-width:0px;
+            background: var(--Primary-2, #FF8A08);
+            margin: 11px;
+    margin-right: 10%;
+        }
+    .icon-container-tab{
+        display: flex;
+        justify-content: space-between;
+        
+     
+    }
+    .both-btn-tab{
+        display: flex;
+        margin-top: 10%;
+    }
+    .close-icon{
+        display: flex;
+        width: 100%;
+        margin-top: 15%;
+        order: 2;
+        margin-left: 15%;
+    }
+    
+    }
+    
+    
+    @media (min-width:577px) and (max-width:991px){
+        .navbar{
+            background: var(--Grey-3, #F8F9FF);
+            box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+                display: flex;
+                justify-content: space-between;
+            width:90%;
+            height: 40px;
+            padding: 20px 50px;
+            align-items: center;
+            flex-shrink: 0;
+            position:fixed;
+        }
+        .right-content-buttons{
+            display: flex;
+            align-items: flex-end;
+       
+        }
+        .be-a-customer-btn{
+            display: none;
+        }
+        .become-a-consultant-btn{
+            display: none;
+        }
+        .signin-btn{
+            display: flex;
+            width: 10%;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-top:20px;
+            gap: 8px;
+            color:#0071C1;
+            background:transparent;
+            border-width:0px;
+        }
+        .hamberg-icon{
+            display: flex;
+            width: 70%;
+            margin-left: 70%;
+            margin-bottom: 10px;
+        }
+        .right-content-buttons-tab{
+            display: flex;
+           
+        }
+        .be-a-customer-btn-tab{
+            display: flex;
+            width: 75px;
+            padding: 8px;
+            justify-content: center;
+            align-items: center;
+            gap: 7.5px;
+            border-radius: 8px;
+            color:white;
+            border-width:0px;
+            background: var(--Primary-2, #FF8A08);
+            margin: 11px;
+            margin-left: 29%;
+        }
+        .become-a-consultant-btn-tab{
+            display: flex;
+            width: 50%;
+            padding: 8px;
+            justify-content: center;
+            align-items: center;
+            gap: 7.5px;
+            border-radius: 8px;
+            color:white;
+            border-width:0px;
+            background: var(--Primary-2, #FF8A08);
+            margin: 11px;
+    margin-right: 10%;
+        }
+    .icon-container-tab{
+        display: flex;
+        justify-content: space-between;
+        
+     
+    }
+    .both-btn-tab{
+        display: flex;
+        margin-top: 10%;
+    }
+    .close-icon{
+        display: flex;
+        width: 100%;
+        margin-top: 15%;
+        order: 2;
+        margin-left: 15%;
+    }
+    }
+    

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Razorpay Payment Integration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #eef2f5;
+        margin: 0;
+      }
+      .container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+        font-weight: 700;
+      }
+      p {
+        margin: 20px 0;
+        color: #555;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .amount-details {
+        margin: 20px 0;
+      }
+      .amount-details span {
+        display: block;
+        margin-bottom: 10px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Pay with Razorpay</h2>
+      <p>
+        Actual amount 454000 <br />
+        +18%GST &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;81720 <br />
+        Total Amount &nbsp;&nbsp;535720
+      </p>
+      <button id="pay-button">Pay</button>
+    </div>
+
+    <script>
+      document.getElementById("pay-button").onclick = async function () {
+        const amount = 535720;
+        const customerId = localStorage.getItem("customerId");
+        const email = localStorage.getItem("email");
+        console.log(customerId);
+        const userUrl = `http://localhost:5000/customer/${customerId}`;
+        const userResponse = await fetch(userUrl);
+        if (!userResponse.ok) {
+          alert("Failed to fetch user details");
+          return;
+        }
+        const user = await userResponse.json();
+        const contact = user.basicdetails[0].contact;
+
+        const orderUrl = "http://localhost:5000/payment/create-order";
+        const response = await fetch(orderUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: customerId, // Replace with actual user ID if available
+            amount: amount * 100, // Razorpay accepts amount in paise
+            currency: "INR",
+            receipt: "receipt#1",
+            planType: "basic",
+            validTill: new Date().toISOString(),
+          }),
+        });
+
+        if (!response.ok) {
+          alert("Failed to create order");
+          return;
+        }
+
+        const order = await response.json();
+
+        const options = {
+          key: "rzp_live_bhSFIlkXSdX0o2", // Use your test key
+          amount: order.amount,
+          currency: order.currency,
+          name: "Payment to Syntropy Ventures",
+          description: "Payment to Syntropy Ventures",
+          order_id: order.id,
+          handler: async function (response) {
+            const expiryDate = new Date();
+            expiryDate.setFullYear(expiryDate.getFullYear() + 1); // Set expiry date to one year from now
+
+            const data = {
+              orderId: response.razorpay_order_id,
+              paymentId: response.razorpay_payment_id,
+              signature: response.razorpay_signature,
+              Addcredits: 180,
+              expiryDate: expiryDate.toISOString(),
+            };
+
+            const verifyUrl = "http://localhost:5000/payment/verify-payment";
+            const result = await fetch(verifyUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const verification = await result.json();
+            if (verification.success) {
+              alert("Payment Successful");
+              // Additional code to update UI or navigate to another page
+            } else {
+              alert("Payment Failed: " + verification.error);
+              // Additional code to handle payment failure
+            }
+          },
+          prefill: {
+            name: email,
+            email: email,
+            contact: contact,
+          },
+          notes: {
+            address: "Syntropy ventures",
+          },
+          theme: {
+            color: "#F37254",
+          },
+        };
+
+        const rzp1 = new Razorpay(options);
+        rzp1.open();
+      };
+    </script>
+  </body>
+</html>

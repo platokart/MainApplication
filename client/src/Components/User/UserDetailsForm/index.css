@@ -1,0 +1,379 @@
+.details-form-bg-container{
+    display: flex;
+    padding: 80px 70px 120px 60px;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 100vw;
+    min-height: 100vh;
+} /*k*/
+
+.detailsform-image{
+    margin-right: 120px;
+    width: 26%;
+    height: 80%;
+    margin-top: 50px;
+}/*k*/
+
+.details-form-container{
+    display: flex;
+    /* width: 816px; */
+    width: 66%;
+    padding: 39px 0 38px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px;
+    background: var(--Grey-4, #F8F9FF);
+}/*k*/
+
+.details-form-heading{
+color: var(--Primary-1, #0071C1);
+font-family: Inter;
+font-size: 42px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+}/*k*/
+
+
+
+.details-form-label-el{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}/*k*/
+
+.industry-level-input-select{
+    padding: 10px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background: #FFF;
+    border-radius: 8px;
+    width: 90%;
+}
+
+
+.filtered-companies-list{
+    width: 88%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background: #FFF;
+    margin-top: 0;
+}/*k*/
+
+.hide-companies{
+    display: none;
+}/*k*/
+
+.filtered-company-option{
+    font-size: 16px;
+    font-family: Inter;
+    margin-bottom: 8px;
+    list-style-type: none;
+    cursor: pointer;
+}/*k*/
+
+.input-container{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}/*k*/
+
+.input-long-container{
+    display: flex;
+    width: 96%;
+    align-items: center;
+    margin-bottom: 30px;
+} /*k*/
+
+.horizantal-input-container{
+    width: 46%;
+    margin-right: 20px;
+    
+}/*k*/
+
+.select-input-el{
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: #FFF;
+    height: 50px;
+}/*k*/
+.select-option{
+    font-size: 20px;
+}/*k*/
+
+
+.details-form-long-container{
+    display: flex;
+    width: 96%;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.details-from-part-container{
+    width: 46%;
+    margin-right: 20px;
+}
+
+.details-form-user-input{
+    width: 98%;
+    background: #FFF;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    font-family: "Inter";
+    outline: none;
+}
+
+
+.password-container{
+    background: #FFF;
+    display: flex;
+    width: 88%;
+    align-items: center;
+    padding: 0;
+    border-radius: 10px;
+}/*k*/
+
+
+.details-form-checkbox-container{
+    display: flex;
+}/*k*/
+
+.details-form-checkbox{
+    font-size: 20px;
+    margin-right: 8px;
+    align-self: flex-start;
+    margin-top: 20px;
+    cursor: pointer;
+}/*k*/
+
+.details-form-consent-description{
+    width: 90%;
+flex-shrink: 0;
+color: var(--Grey-1, #191919);
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 1.28px;
+}/*k*/
+
+.details-form-readmor-span{
+    color: var(--Accent-2, #21BF73);
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.28px;
+text-decoration-line: underline;
+cursor: pointer;
+}/*k*/
+
+.details-form-signup-btn{
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--Primary-2, #FF8A08);
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    width: 95%;
+}/*k*/
+
+/**city*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+
+  #autocomplete-list {
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .autocomplete-items {
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .autocomplete-items:hover {
+    background-color: #e9e9e9;
+  }
+
+  .autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+
+@media (max-width:991px) and (min-width:768px){
+     .details-form-bg-container{
+        padding: 60px;
+        flex-direction: column;
+        align-items: center;
+     }
+    .detailsform-image{
+        margin-right: 0px;
+        width: 40%;
+        height: 400px;
+        align-self: center;
+        margin-bottom: 50px;
+        /* margin-left: 50px; */
+        margin-top: 20px;
+    }
+    .details-form-container{
+    /* width: 816px; */
+    width: 86%;
+    padding: 29px 0 28px 20px;
+    border-radius: 16px;
+    background: var(--Grey-4, #F8F9FF);
+    }
+    .details-form-heading{
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .details-form-name-container{
+        
+    }
+    .name-input-container{
+        margin-right: 12px;
+    }
+    .details-form-label-el{
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        margin-left: 4px;
+    }
+    .details-form-input-el-name{
+        padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #FFF;
+    width: 90%;
+    margin-right: 40px;
+    border: none;
+    outline: none;
+    height: 34px;
+    }
+    .input-container{}
+    .details-form-input-el{}
+    .details-form-input-select{}
+    .details-form-checkbox-container{}
+    .details-form-checkbox{}
+    .details-form-consent-description{}
+    .details-form-readmor-span{}
+    .details-form-signup-btn {}
+}
+
+@media (max-width:767px) {
+     .details-form-bg-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* max-width: 100vw;
+        max-height: 100vh; */
+        padding: 60px 80px ;
+     }
+    .detailsform-image{
+        width: 90%;
+        height: 300px;
+        margin-left: 80px;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+    .details-form-container{
+        width: 100%;
+    padding: 19px  18px ;
+    border-radius: 16px;
+    background: var(--Grey-4, #F8F9FF);
+    }
+    .details-form-heading{
+        font-size: 32px;
+        font-weight: 900;
+    }
+    .details-form-name-container{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .name-input-container{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .details-form-label-el{
+        font-size: 17px;
+
+    }
+    .details-form-input-el-name{}
+    .input-container{
+        margin-bottom: 20px;
+    }
+    .details-form-input-el{}
+    .details-form-input-select{}
+    .details-form-checkbox-container{}
+    .details-form-checkbox{}
+    .details-form-consent-description{
+        font-size: 12px;
+    }
+    .details-form-readmor-span{
+        font-size: 12px;
+    }
+    .details-form-signup-btn {
+        padding: 10px;
+        gap: 2px;
+        
+        border-radius: 8px;
+        font-size: 16px;
+        font-style: normal;
+        letter-spacing: -0.5px;
+    }
+    .input-long-container{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .horizantal-input-container{
+        width: 96%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .details-form-long-container{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .details-from-part-container{
+        width: 96%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+

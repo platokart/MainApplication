@@ -1,0 +1,78 @@
+.main-container{
+    display: flex;
+width: 816px;
+height: 1024px;
+min-width: 762px;
+max-width: 816px;
+padding: 49px 48px;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+flex-shrink: 0;
+border-radius: 20px 0px 0px 20px;
+background: var(--Grey-3, #F8F9FF);
+}
+.main-container h1{
+    color: var(--Primary-1, #0071C1);
+font-family: Inter;
+font-size: 42px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: -1.68px;
+}
+.main-container p{
+    color: var(--Grey-1, #191919);
+font-family: Inter;
+font-size: 22px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 1.28px;
+}
+.main-container button{
+    display: flex;
+padding: 24px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+align-self: stretch;
+border-radius: 10px;
+background: var(--Primary-2, #FF8A08);
+color: #FFF;
+text-align: center;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.96px;
+}
+.main-container textarea{
+    height: 156px;
+align-self: stretch;
+border-radius: 10px;
+background: #FFF;
+} 
+.upload-container{
+    display: flex;
+    flex-direction: row;
+height: 60px;
+padding: 17.126px 15.859px;
+flex-direction: column;
+align-items: flex-start;
+gap: 13.701px;
+border-radius: 10.276px;
+background: #FFF;
+}
+.issue-input-select{
+    display: flex;
+height: 60px;
+padding: 18px 20px 18px 24px;
+justify-content: flex-end;
+align-items: flex-start;
+gap: 596px;
+align-self: stretch;
+border-radius: 10px;
+background: #FFF;
+}

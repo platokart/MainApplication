@@ -1,0 +1,1022 @@
+.main-home-bg-container{
+    width: 97vw;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Add vertical scrollbar */
+max-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+
+.welcome-page-container{
+    background: var(--Grey-3, #F8F9FF);
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    padding: 50px 30px 50px 30px;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+}
+.welcome-page-description-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 36%;
+    margin-left: 110px;
+}
+.welcome-page-heading {
+    color: var(--Primary-1, #0071C1);
+    font-family: 'Inter', sans-serif;
+    font-size: 84px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    letter-spacing: 2px; /* Add spacing between letters */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.company-name {
+    color: var(--Primary-2, #FF8A08);
+    /* background: linear-gradient(45deg, #FF8A08, #FFC107); */
+    background: linear-gradient(45deg, #FF8A08, #ff8a08);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+
+.welcome-page-description {
+    color: var(--Grey-1, #191919);
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5; /* Adjust line height for better readability */
+    opacity: 0.7; /* Slightly increase opacity */
+    margin-top: 20px; /* Add some margin for spacing */
+}
+
+/* .welcome-page-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 84px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+}
+.company-name{
+    color: var(--Primary-2, #FF8A08);
+}
+.welcome-page-description{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+} */
+.welcome-page-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .welcome-page-button{
+    border: none;
+    padding: 18px;
+    border-radius: 8px;
+    color:white;
+    background: var(--Primary-2, #FF8A08);
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+} */
+.welcome-page-button {
+    border: none;
+    padding: 18px 25px; /* Adjust padding for better proportion */
+    border-radius: 8px;
+    color: white;
+    background: linear-gradient(45deg, #FF8A08, #FFC107); /* Gradient background */
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for effects */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: relative; /* For pseudo-elements */
+    border-radius: 50px; /* Gives a pill shape */
+    /* clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%); */
+
+    overflow: hidden; /* For pseudo-elements */
+}
+
+/* Hover effects */
+.welcome-page-button:hover {
+    background: linear-gradient(45deg, #FFC107, #FF8A08); /* Reverse gradient on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+    transform: translateY(-4px) ; /* Slight lift and enlarge on hover */
+}
+
+
+/* Focus effects */
+.welcome-page-button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(255, 138, 8, 0.3); /* Custom focus shadow */
+}
+
+/* Active effects */
+.welcome-page-button:active {
+    transform: translateY(0); /* Reset lift */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Original shadow */
+}
+
+/* Add pseudo-elements for additional effect */
+.welcome-page-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Light overlay */
+    transition: all 0.3s ease;
+    z-index: 0; /* Ensure it is behind the button content */
+}
+
+.welcome-page-button:hover::before {
+    background: rgba(255, 255, 255, 0.2); /* Enhanced overlay on hover */
+}
+
+.welcome-page-video-icon{
+    width: 36px;
+    height: 36px;
+}
+.welcome-page-img{
+    width: 36%;
+    height: 86%;
+    margin-right: 10px;
+}    
+/* .welcome-page-button:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+} */
+
+/*industry based consultation css*/
+.industry-based-consultation-container{
+    background: #F2F2F7;
+    padding: 50px 30px 50px 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 85vw;
+}
+.industry-based-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    align-self: flex-start;
+}
+.consultation-types-list{
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;       
+    margin: 0;
+}
+.list-item{
+    list-style-type: none;
+}
+.industry-type-card{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 12%;
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+}
+.industry-type-container{
+    width: 140px;
+    height: 140px;
+    padding: 15px;
+    
+    
+    margin-bottom: 0;
+}
+.industry-type-card {
+    transition: all 0.5s ease;
+}
+
+.industry-type-card:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9); /* Adjust shadow as needed */
+}
+
+.industry-type-card:hover .industry-type-img {
+    width: 80px;
+    height: 80px;
+
+}
+
+.industry-type-img{
+    width: 70px;
+    height: 70px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.industry-name{
+    color: var(--Primary-2, #FF8A08);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    flex-wrap: wrap;
+    letter-spacing: -0.64px;
+}
+
+/*function based consultation*/
+.function-based-consultation-container{
+    background: #F2F2F7;
+    padding: 50px 30px 50px 110px;
+    display: inline-flex;
+    width: 85vw;
+    justify-content: center;
+    flex-direction: column;
+}
+.function-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.function-based-consultation-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    align-self: flex-start;
+}
+.view-all-btn{
+    border: none;
+    background: transparent;
+    color: var(--Primary-2, #FF8A08);
+    font-family: Inter;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    margin-right: 96px;
+    cursor: pointer;
+}
+.consultation-types-list{
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;       
+    margin: 0;
+}
+.function-card-type{
+    display: flex;
+    width: 21%;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.function-image{
+    width: 100%;
+    height: 80%;
+}
+.function-name{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.72px;
+    padding: 0;
+    margin: 5px;
+}
+.function-card-btn{
+    border-radius: 8px;
+    background: var(--Primary-2, #FF8A08);
+    padding: 10px;
+    width: 100%;
+    color: var(--Grey-3, #F8F9FF);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
+
+/*andoroid page css*/
+.android-download-container{
+    background: var(--Grey-3, #F8F9FF);
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    padding: 50px 30px 50px 30px;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+}
+.mobile-img{
+    width: 36%;
+    height: 86%;
+    margin-left: 110px;
+}
+.android-download-contents-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 46%;
+    margin-right: 30px;
+}
+.android-download-heading{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 78px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+.android-download-span{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 78px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.android-download-description{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.android-download-email-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.email-input-el{
+    border-radius: 7.926px;
+    border: 0.881px solid var(--Grey-2, #7C7D80);
+    background: #FFF;
+    padding: 12px;
+    font-size: 20px;
+    outline: none;
+    width: 70%;
+    margin-right: 10px;
+}
+.share-link-button{
+    border-radius: 7.926px;
+    border: none;
+    background: var(--Primary-2, #FF8A08);
+    width: 30%;
+    padding: 13px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+.android-download-card{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+}
+.andorid-playstore-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+.android-download-description{
+    color: var(--Grey-2, #7C7D80);
+    font-family: Inter;
+    font-size: 27.301px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.android-option-img{
+}
+.android-scanner-container{}
+.qr-img{}
+
+
+@media (min-width:577px) and (max-width:991px){
+.welcome-page-container{
+    width: 98%;
+    padding: 15px;
+    height: 85vh;
+}
+.welcome-page-img{
+    width: 44%;
+    height: 80%;
+    margin-right: 30px;
+}
+.welcome-page-description-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 20px;
+}
+.welcome-page-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+.company-name{
+    color: var(--Primary-2, #FF8A08);
+    text-decoration-line: underline;
+}
+.welcome-page-description{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+}
+.welcome-page-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-page-button{
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    color:white;
+    background: var(--Primary-2, #FF8A08);
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+.welcome-page-video-icon{
+    width: 26px;
+    height: 26px;
+}
+
+/*industry based consultation css*/
+.industry-based-consultation-container{
+    padding: 50px 30px 50px 30px;
+    
+
+}
+.industry-based-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    align-self: flex-start;
+}
+.consultation-types-list{
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;       
+    margin: 0;
+}
+.list-item{
+    list-style-type: none;
+}
+.industry-type-card{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 14%;
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 20px;
+
+}
+.industry-type-container{
+    width: 140px;
+    height: 140px;
+    padding: 15px;
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+    margin-bottom: 0;
+}
+.industry-type-img{
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+}
+.industry-name{
+    color: var(--Primary-2, #FF8A08);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    flex-wrap: wrap;
+    letter-spacing: -0.64px;
+}
+
+/*function based consultation*/
+.function-based-consultation-container{
+    padding: 50px 30px 50px 50px;        
+}
+.function-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.function-based-consultation-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    align-self: flex-start;
+}
+.view-all-btn{
+    border: none;
+    background: transparent;
+    color: var(--Primary-2, #FF8A08);
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    margin-right: 36px;
+    cursor: pointer;
+}
+.consultation-types-list{
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;       
+    margin: 0;
+}
+.function-card-type{
+    display: flex;
+    width: 20%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.function-image{
+    width: 100%;
+    height: 80%;
+}
+.function-name{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.72px;
+    padding: 0;
+    margin: 5px;
+}
+.function-card-btn{
+    border-radius: 8px;
+    background: var(--Primary-2, #FF8A08);
+    padding: 7px;
+    width: 100%;
+    color: var(--Grey-3, #F8F9FF);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
+
+/*andoroid page css*/
+.android-download-container{
+    width: 96%;
+    padding: 50px 30px 50px 30px;
+    justify-content: space-between;
+    align-items: center;
+    height: 85vh;
+}
+.mobile-img{
+    width: 36%;
+    height: 76%;
+    margin-left: 10px;
+}
+.android-download-contents-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 46%;
+    margin-right: 30px;
+}
+.android-download-heading{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
+.android-download-span{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.android-download-description{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.android-download-email-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.email-input-el{
+    border-radius: 7.926px;
+    border: 0.881px solid var(--Grey-2, #7C7D80);
+    background: #FFF;
+    padding: 12px;
+    font-size: 20px;
+    outline: none;
+    width: 70%;
+    margin-right: 10px;
+}
+.share-link-button{
+    border-radius: 7.926px;
+    border: none;
+    background: var(--Primary-2, #FF8A08);
+    width: 30%;
+    padding: 13px 8px 13px 8px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+.android-download-card{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+}
+.andorid-playstore-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+.android-download-description{
+    color: var(--Grey-2, #7C7D80);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.android-option-img{
+}
+.android-scanner-container{}
+.qr-img{}
+
+}
+
+@media (max-width:576px){
+  /* wecome page css*/
+  .welcome-page-container{
+    background: var(--Grey-3, #F8F9FF);
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: 0;
+}
+.welcome-page-description-container{
+    width: 100%;
+    margin-left: 0;
+}
+.welcome-page-heading{
+    font-size: 54px;
+    font-weight: 600;
+    margin: 0;
+}
+.company-name{
+    color: var(--Primary-2, #FF8A08);
+    text-decoration-line: underline;
+}
+.welcome-page-description{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+}
+.welcome-page-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-page-button{
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    color:white;
+    background: var(--Primary-2, #FF8A08);
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+.welcome-page-video-icon{
+    width: 26px;
+    height: 26px;
+}
+.welcome-page-img{
+    width: 36%;
+    height: 46%;
+    margin-right: 0;
+    display: none;
+}    
+.welcome-page-button:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+}
+
+/*industry based consultation css*/
+.industry-based-consultation-container{
+    padding: 20px;
+    width: 100%;        
+}
+.industry-based-heading{
+    font-size: 28px;
+    font-weight: 600;
+    
+}
+.consultation-types-list{
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;       
+    margin: 0;
+}
+.list-item{
+    list-style-type: none;
+}
+.industry-type-card{
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 40%;
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    height: 180px;
+}
+
+.industry-type-img{
+    width: 100%;
+    height: 100px;
+    align-self: center;
+    cursor: pointer;
+}
+.industry-name{
+    color: var(--Primary-2, #FF8A08);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    flex-wrap: wrap;
+    letter-spacing: -0.64px;
+}
+
+ /*function based consultation*/
+ .function-based-consultation-container{
+    padding: 20px;
+    width: 100%;
+}
+.function-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.function-based-consultation-heading{
+    font-size: 24px;
+    font-weight: 600;
+}
+.view-all-btn{
+    border: none;
+    background: transparent;
+    color: var(--Primary-2, #FF8A08);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+.consultation-types-list{
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;       
+    margin: 0;
+}
+.function-card-type{
+    display: flex;
+    width: 40%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.function-image{
+    width: 100%;
+    height: 80%;
+}
+.function-name{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.72px;
+    padding: 0;
+    margin: 5px;
+}
+.function-card-btn{
+    border-radius: 8px;
+    background: var(--Primary-2, #FF8A08);
+    padding: 10px;
+    width: 100%;
+    color: var(--Grey-3, #F8F9FF);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
+
+/*andoroid page css*/
+.android-download-container{
+    background: var(--Grey-3, #F8F9FF);
+    width: 96%;
+    padding: 20px;
+    height: 80vh;
+}
+.mobile-img{
+    display: none;
+}
+.android-download-contents-container{
+    width: 96%;
+    margin-right: 0;
+}
+.android-download-heading{
+    
+    font-size: 38px;
+    font-weight: 600;
+}
+.android-download-span{
+    font-size: 38px;
+    font-weight: 600;
+}
+.android-download-description{
+    font-size: 22px;
+    font-weight: 400;
+}
+.android-download-email-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.email-input-el{
+    border-radius: 7.926px;
+    border: 0.881px solid var(--Grey-2, #7C7D80);
+    background: #FFF;
+    padding: 12px;
+    font-size: 20px;
+    outline: none;
+    width: 70%;
+    margin-right: 10px;
+}
+.share-link-button{
+    border-radius: 7.926px;
+    border: none;
+    background: var(--Primary-2, #FF8A08);
+    width: 30%;
+    padding: 6px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+.android-download-card{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+}
+.andorid-playstore-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+.android-download-description{
+    color: var(--Grey-2, #7C7D80);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.android-option-img{
+}
+.android-scanner-container{}
+.qr-img{}
+}
+
+

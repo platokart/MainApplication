@@ -1,0 +1,167 @@
+.chat-notification-item-card{
+    border-radius: 10px;
+    border: none;
+    background: #FFF;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 93%;
+    height: 10%;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.active{
+    border: 1px solid var(--Primary-2, #FF8A08);
+}
+
+.chat-notifivation-profile-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-notification-profile-img{
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.chat-notification-details-card{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.chat-notification-sender-name{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 129.412% */
+    letter-spacing: -0.073px;
+    margin: 0;
+}
+
+.chat-notification-msg{
+    color: var(--Grey-2, #7C7D80);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -0.06px;
+}
+
+.chat-notification-time-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.chat-notification-unheard-notification{
+    /* color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: var(--Accent-2, #21BF73);
+    border-radius: 50%;
+    padding: 4px 4px; */
+    width: 28px;  /* Adjust the width and height as needed */
+    height: 28px; /* Adjust the width and height as needed */
+    background-color: #21BF73; /* Green background color */
+    color: #FFF; /* White text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes the div a circle */
+    font-size: 13px; /* Adjust the font size as needed */
+    font-weight: 500; /* Makes the text bold */
+    position: relative;
+}
+
+.chat-notification-unheard-container{
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+    
+}
+
+.chat-notification-sent-time{
+    color: var(--Accent-2, #21BF73);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px; /* 183.333% */
+    letter-spacing: -0.052px;
+    
+}
+
+
+.chat-notification-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.chat-notification-item:hover {
+    background-color: #f5f5f5;
+}
+
+.chat-notification-item-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-notification-item-details {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.chat-notification-item-name {
+    margin: 0;
+    font-size: 16px;
+}
+
+.chat-notification-item-message {
+    margin: 0;
+    color: #999;
+}
+
+.chat-notification-item-time-notification {
+    text-align: right;
+}
+
+.chat-notification-item-time {
+    font-size: 12px;
+    color: #999;
+}
+
+.chat-notification-item-unheard {
+    display: inline-block;
+    margin-top: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+}

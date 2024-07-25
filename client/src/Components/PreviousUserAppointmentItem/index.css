@@ -1,0 +1,62 @@
+.user-appointment-details-card{
+    display: flex;
+padding: 15px;
+flex-direction: column;
+align-items: flex-start;
+gap: 4px;
+border-radius: 10px;
+background: var(--Grey-3, #F8F9FF);
+box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+margin-right: 20px;
+margin-bottom: 20px;
+width: 20%;
+}
+
+.user-appointment-details-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.user-appointment-details-name{
+    color: var(--Grey-1, #191919);
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.user-appointments-details-type{
+    color: var(--Grey-2, #7C7D80);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.user-appointment-details-img{
+    width: 46.154px;
+height: 46.154px;border-radius: 50%;
+border: 1.923px solid #FFF;
+}
+
+.user-appointment-details-date{
+    color: var(--Primary-2, #FF8A08);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.user-appointment-details-time{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

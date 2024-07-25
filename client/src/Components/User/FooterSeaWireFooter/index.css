@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+
+/* Footer.css */
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw; /* Set the width to 100% of the viewport width */
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    padding-right: 0; /* Remove any right padding */
+    padding-left: 0; /* Remove any left padding */
+    overflow-x: hidden; /* Hide any horizontal overflow */
+    background: var(--Grey-3, #F8F9FF);
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.plato-content h4 {
+    color: var(--Primary-1, #0071C1);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 49px;
+    
+}
+
+
+     .plato-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+    
+     }
+     .get-in-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%;
+     
+     margin-left:220px;
+    
+     }
+     .plato-footer{
+        display: flex;
+        flex-direction: row;
+        margin:0px;
+        padding:0px;
+     }
+     .get-in-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; 
+     }
+     .location-symbol-content{
+       display:flex;
+       align-items:center;
+     }
+     .help-symbol-content{
+         display:flex;
+         align-items:center;
+       }
+
+       .get-consultation-inner {
+        padding-bottom: 78px;
+        box-sizing: border-box;
+      }
+     .follow-us-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; 
+     margin-right: 120px;
+    
+     }
+     .anchor-helpdesk{
+         color: var(--Grey-2, #7C7D80);
+         text-decoration: none;
+     }
+     .linkedin-icon{
+         background-color: var(--Primary-2, #FF8A08);
+         width:26px;
+         padding-left:10px;
+         padding-top:10px;
+         height:30px;
+         border-radius:20px;
+     color:white;
+     font-weight:600;
+     }
+     .anchor-linkedin-icon{
+         color: white;
+     }
+     .newsletter-content{
+         width: 296px;
+     height: 215px;
+     flex-shrink: 0;
+     margin-left: 90px;
+     }
+     .newsletter-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; /* 137.5% */
+     }
+     .newsletter-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     }
+     .input-email{
+         display:flex;
+         flex-direction:column;
+     }
+     .input-email button{
+         display: flex;
+     width: 160px;
+     max-width: 240px;
+     padding: 14px;
+     justify-content: center;
+     align-items: center;
+     gap: 7.5px;
+     border-radius: 8px;
+     margin-top:10px;
+     color:white;
+     border-width:0px;
+     background: var(--Primary-2, #FF8A08);
+     }
+     .newsletter-content input{
+         border-radius: 5px;
+     border: 1px solid var(--Primary-1, #0071C1);
+     background: #FFF;
+     width: 260px;
+     height: 36px;
+     flex-shrink: 0;
+     }  
+     
+     .copy-right-icon {
+        display: flex;
+        align-items: center;
+    }
+    .plato{
+        color: var(--Primary-1, #0071C1);
+font-variant-numeric: lining-nums proportional-nums;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+
+    }
+    
+    .copy-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        margin-right: 10px; /* Adjust as needed */
+    }
+
+    .small-container{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        padding:20px;
+        align-items: center;
+    }
+    
+
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+   
+    .get-consultation-inner {
+        width: 100%;
+    }
+
+    .small-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width:90%;
+        padding:10px
+
+    }
+
+    .copy-right-icon {
+        flex-direction: row; 
+        align-items: flex-start; 
+       
+    }
+    .plato-footer {
+        width: 100%; /* Set to full width */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .copy-icon {
+        width: 24px;
+        height: 24px;
+        
+    }
+        
+      .newsletter-content {
+            width: 100%; 
+            margin-right: 100; /* Remove right margin */
+            margin-left: 0; /* Remove left margin */
+           
+        }
+
+    .plato-content,
+    .get-in-content {
+        width: 100%; /* Set to full width */
+        margin-right: 0; /* Remove margin */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+    }
+    .plato-content h4,
+    .get-in-content h4 {
+        margin-left: 0; /* Remove left margin */
+    }
+
+    
+   
+}
+
+/* Additional adjustments for smaller devices */
+@media (max-width: 991px) {
+    .copy-right-icon {
+        flex-direction: row; /* Change to column layout */
+        align-items: flex-start; /* Align items to the start */
+    }
+    .copy-icon {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+
+    .newsletter-content{
+        margin-left: 10px;
+        margin-right: 20px; /* Add right margin */
+    }
+    .follow-us-content{
+        margin-right: 20px; /* Add right margin */
+        margin-left: 0px; /* Remove left margin */
+    }
+
+    .get-in-content{
+        margin-left: 40px;
+    }
+}
+

@@ -1,0 +1,398 @@
+@media (min-width:992px){
+    .footer-container{
+        display:flex;
+        flex-direction:row;
+     background: var(--Grey-3, #F8F9FF);
+     box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+     align-items:center;
+     width: 100%;
+     justify-content:space-between;
+     }
+     
+     .plato-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+        margin-left:49px;
+         margin-top:79px;
+     }
+     .plato-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     margin:40px;
+     }
+     .get-in-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     margin:40px;
+     }
+     .get-in-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; /* 137.5% */
+     }
+     .location-symbol-content{
+       display:flex;
+       align-items:center;
+     }
+     .help-symbol-content{
+         display:flex;
+         align-items:center;
+       }
+     .follow-us-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     margin:40px;
+     }
+     .anchor-helpdesk{
+         color: var(--Grey-2, #7C7D80);
+         text-decoration: none;
+     }
+     .linkedin-icon{
+         background-color: var(--Primary-2, #FF8A08);
+         width:26px;
+         padding-left:10px;
+         padding-top:10px;
+         height:30px;
+         border-radius:20px;
+     color:white;
+     font-weight:600;
+     }
+     .anchor-linkedin-icon{
+         color: white;
+     }
+     .newsletter-content{
+         width: 296px;
+     height: 215px;
+     flex-shrink: 0;
+     margin:40px;
+     }
+     .newsletter-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; /* 137.5% */
+     }
+     .newsletter-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     }
+     .input-email{
+         display:flex;
+         flex-direction:column;
+     }
+     .input-email button{
+         display: flex;
+     width: 160px;
+     max-width: 240px;
+     padding: 14px;
+     justify-content: center;
+     align-items: center;
+     gap: 7.5px;
+     border-radius: 8px;
+     margin-top:10px;
+     color:white;
+     border-width:0px;
+     background: var(--Primary-2, #FF8A08);
+     }
+     .newsletter-content input{
+         border-radius: 5px;
+     border: 1px solid var(--Primary-1, #0071C1);
+     background: #FFF;
+     width: 260px;
+     height: 36px;
+     flex-shrink: 0;
+     } 
+}
+
+@media (max-width:576px){
+    .footer-container{
+        display:flex;
+        flex-direction: column;
+     flex-shrink: 0;
+     background: var(--Grey-3, #F8F9FF);
+     box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+     width: 100%;
+     
+     }
+     
+     .plato-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+       margin-left: 18px;
+         margin-top:39px;
+     }
+     .plato-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     margin:10px;
+     }
+     .get-in-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     margin:10px;
+     }
+     .get-in-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; /* 137.5% */
+     }
+     .location-symbol-content{
+       display:flex;
+       align-items:center;
+     }
+     .help-symbol-content{
+         display:flex;
+         align-items:center;
+       }
+       .anchor-helpdesk{
+         color: var(--Grey-2, #7C7D80);
+         text-decoration: none;
+     }
+     .follow-us-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     margin:10px;
+     }
+     .linkedin-icon{
+         background-color: var(--Primary-2, #FF8A08);
+         width:26px;
+         padding-left:10px;
+         padding-top:10px;
+         height:30px;
+         border-radius:20px;
+     color:white;
+     font-weight:600;
+     }
+     .anchor-linkedin-icon{
+         color: white;
+     }
+     .newsletter-content{
+         width: 296px;
+     height: 215px;
+     flex-shrink: 0;
+     margin:10px;
+     }
+     .newsletter-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; /* 137.5% */
+     }
+     .newsletter-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     }
+     .input-email{
+         display:flex;
+         flex-direction:column;
+     }
+     .input-email button{
+         display: flex;
+     width: 160px;
+     max-width: 240px;
+     padding: 14px;
+     justify-content: center;
+     align-items: center;
+     gap: 7.5px;
+     border-radius: 8px;
+     margin-top:10px;
+     color:white;
+     border-width:0px;
+     background: var(--Primary-2, #FF8A08);
+     }
+     .newsletter-content input{
+         border-radius: 5px;
+     border: 1px solid var(--Primary-1, #0071C1);
+     background: #FFF;
+     width: 260px;
+     height: 36px;
+     flex-shrink: 0;
+     }
+}
+
+@media (min-width:577px) and (max-width:991px){
+    .footer-container{
+        display:flex;
+        flex-direction:row;
+        width: 100%;
+     flex-shrink: 0;
+     background: var(--Grey-3, #F8F9FF);
+     box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+     align-items:center;
+     justify-content:space-between;
+     }
+     
+     .plato-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 25px;
+         font-style: normal;
+         font-weight: 700;
+        margin-left: 10%;
+     }
+     .plato-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 24px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+ margin-left: 10%;
+     }
+     .get-in-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 24px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+ 
+     }
+     .get-in-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 24px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; /* 137.5% */
+     }
+     .location-symbol-content{
+       display:flex;
+       align-items:center;
+       height: 50%;
+     }
+     .help-symbol-content{
+         display:flex;
+         align-items:center;
+        
+       }
+     .follow-us-content{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 24px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     }
+     .anchor-helpdesk{
+         color: var(--Grey-2, #7C7D80);
+         text-decoration: none;
+     }
+     .linkedin-icon{
+         background-color: var(--Primary-2, #FF8A08);
+         width:36px;
+         padding-left:10px;
+         padding-top:10px;
+         height:30px;
+         border-radius:20px;
+     color:white;
+     font-weight:600;
+     }
+     .anchor-linkedin-icon{
+         color: white;
+     }
+     .newsletter-content{
+         width: 296px;
+     height: 215px;
+     flex-shrink: 0;
+     }
+     .newsletter-content h4{
+         color: var(--Primary-1, #0071C1);
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: Inter;
+         font-size: 25px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 22px; /* 137.5% */
+     }
+     .newsletter-content p{
+         color: var(--Grey-2, #7C7D80);
+     font-family: Inter;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 150%; /* 24px */
+     }
+     .input-email{
+         display:flex;
+         flex-direction:column;
+     }
+     .input-email button{
+         display: flex;
+     width: 160px;
+     max-width: 240px;
+     padding: 14px;
+     justify-content: center;
+     align-items: center;
+     gap: 7.5px;
+     border-radius: 8px;
+     margin-top:10px;
+     color:white;
+     border-width:0px;
+     background: var(--Primary-2, #FF8A08);
+     }
+     .newsletter-content input{
+         border-radius: 5px;
+     border: 1px solid var(--Primary-1, #0071C1);
+     background: #FFF;
+     width: 260px;
+     height: 36px;
+     flex-shrink: 0;
+     }
+}

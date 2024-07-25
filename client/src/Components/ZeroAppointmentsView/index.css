@@ -1,0 +1,33 @@
+.zero-appointments-view-img{
+    border-radius: 0px 33.109px;
+    width: 393px;
+    height: 435px;
+    margin-bottom: 60px;
+}
+
+.zero-appointments-view-desc{
+    color: var(--Primary-1, #0071C1);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.28px;
+    margin-bottom: 16px;
+}
+
+.zero-appointments-view-btn{
+    padding: 24px;
+    align-self: stretch;
+    border-radius: 10px;
+    background: var(--Primary-2, #FF8A08);
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.96px;
+}

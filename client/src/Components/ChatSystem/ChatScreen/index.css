@@ -1,0 +1,127 @@
+.chat-screen-bg-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    width: 98vw;
+    height: 100vh;
+}
+
+.chat-notifications-container{
+    height: 100vh;
+    background: #F8F9FF;
+    display: inline-flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 26%;
+    gap: 10px;
+}
+
+.chat-notification-heading-container{
+    border-radius: 10px;
+    background: #FFF;
+    display: flex;
+    padding: 0;
+    align-items: center;
+    align-self: stretch;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+    height: 10%;
+    margin-bottom: 0;
+}
+
+.chat-notification-back-arrow{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.chat-notification-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.chat-notifications-card-container{
+    min-height: 90%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.chat-notifications-card-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.chat-screen-notification-item-detail-container{
+    width : 74%;
+    height:  100vh;
+    padding: 10px;
+    background: #FFF;
+}
+
+.chat-screen-history{
+    height: 80%;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.chat-screen-history::-webkit-scrollbar {
+    display: none;
+  }
+
+.chat-screen-msg-input-container{
+    width: 96%;
+    height: 6%;
+    display: flex;
+    align-items: center;border-radius: 10px;
+    background: var(--Grey-3, #F8F9FF);
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.chat-screen-msg-btn{
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.chat-screen-input-container{
+    background-color: transparent;
+    font-size: 22px;
+    border: none;
+    width: 88%;
+    margin-right: 10px;
+    padding: 8px;
+    outline: none;
+}
+
+@media (max-width:992px) and (min-width:876px){
+    .chat-notifications-container{
+        width: 34%;
+    }
+    .chat-screen-notification-item-detail-container{
+        width: 64%;
+    }
+}
+
+@media (max-width:875px){
+    .chat-screen-bg-container{
+        
+    }
+    .chat-notifications-container{
+        width: 100%;
+    }
+    .chat-screen-notification-item-detail-container{
+        width: 100%;
+    }
+}
+

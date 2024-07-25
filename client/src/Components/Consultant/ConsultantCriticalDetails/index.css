@@ -1,0 +1,247 @@
+.details-form-bg-container{
+    display: flex;
+    padding: 80px 70px 0 60px;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+.detailsform-image{
+    margin-right: 120px;
+    width: 26%;
+    height: 80%;
+    margin-top: 50px;
+}
+
+.details-form-contents-container{
+    width: 66%;
+}
+
+.details-form-container{
+    display: flex;
+    /* width: 816px; */
+    width: 96%;
+    padding: 39px 0 38px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px;
+    background: var(--Grey-4, #F8F9FF);
+}
+
+.details-form-heading{
+color: var(--Primary-1, #0071C1);
+font-family: Inter;
+font-size: 42px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+}
+
+
+
+/* .select-option-default{
+    color: var(--Grey-1, #191919);
+} */
+
+.details-form-label-el{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+.availability-label-el{
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.availability-con{
+    margin: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-availability{
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+
+
+}
+
+
+.input-container{
+    margin-bottom: 30px;
+}
+
+.details-form-input-el{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    background: #FFF;
+    width: 98%;
+    border: none;
+    outline: none;
+    height: 34px;
+}
+
+
+
+
+.details-form-checkbox-container{
+    display: flex;
+}
+
+.details-form-checkbox{
+    font-size: 20px;
+    margin-right: 8px;
+    align-self: flex-start;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+.details-form-signup-btn{
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--Primary-2, #FF8A08);
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    width: 95%;
+}
+
+
+.skip-step-container{
+    margin-top: 20px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.or{
+    color: #000;
+font-family: Nunito;
+font-size: 18.443px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-align: center;
+}
+
+.skip-for-now{
+    color: var(--Primary-1, #0071C1);
+    text-align: center;
+    font-feature-settings: 'liga' off;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 100% */
+    cursor: pointer;
+}
+
+.availability-input-el{
+    align-items: stretch;
+}
+
+@media (max-width:991px) and (min-width:768px){
+     .details-form-bg-container{
+        padding: 60px;
+        flex-direction: column;
+        align-items: center;
+     }
+    .detailsform-image{
+        margin-right: 0px;
+        width: 40%;
+        height: 400px;
+        align-self: center;
+        margin-bottom: 50px;
+        /* margin-left: 50px; */
+        margin-top: 20px;
+    }
+    .details-form-container{
+    /* width: 816px; */
+    width: 86%;
+    padding: 29px 0 28px 20px;
+    border-radius: 16px;
+    background: var(--Grey-4, #F8F9FF);
+    }
+    .details-form-heading{
+        font-size: 32px;
+        font-weight: 700;
+    }
+    
+    .details-form-label-el{
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        margin-left: 4px;
+    }
+    
+   
+}
+
+@media (max-width:767px) {
+     .details-form-bg-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* max-width: 100vw;
+        max-height: 100vh; */
+        padding: 60px 80px ;
+     }
+    .detailsform-image{
+        width: 90%;
+        height: 300px;
+        margin-left: 80px;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+    .details-form-container{
+        width: 100%;
+    padding: 19px  18px ;
+    border-radius: 16px;
+    background: var(--Grey-4, #F8F9FF);
+    }
+    .details-form-heading{
+        font-size: 32px;
+        font-weight: 900;
+    }
+   
+    .details-form-label-el{
+        font-size: 17px;
+
+    }
+    .input-container{
+        margin-bottom: 30px;
+    }
+    .details-form-signup-btn {
+        padding: 10px;
+        gap: 2px;
+        
+        border-radius: 8px;
+        font-size: 16px;
+        font-style: normal;
+        letter-spacing: -0.5px;
+    }
+    
+}
+
+

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap");
+
+:root {
+    /* fonts */
+    --font-inter: Inter;
+  
+    /* font sizes */
+    --font-size-base: 16px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --grey-4: #f8f9ff;
+    --primary-1: #0071c1;
+    --grey-1: #191919;
+    --primary-2: #ff8a08;
+  
+    /* Gaps */
+    --gap-5xl: 24px;
+  
+  
+  }
+  
+
+.check-your-mail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px; /* Add padding for space around the container */
+    box-sizing: border-box;
+}
+
+/* Content styles */
+.check-your-mail-content {
+    max-width: 500px;
+    gap: 24px;
+    padding: 20px;
+    max-width: 816px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--Grey-4, #F8F9FF);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align content to the left */
+}
+
+
+/* Back link styles */
+.back-link {
+    display: block;
+    margin-bottom: 10px; /* Reduce margin */
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Title styles */
+.check-your-mail-title {
+    color: var(--Primary-1, #0071C1);
+    font-size: 42px;
+    font-weight: 900;
+    line-height: normal;
+    font-family: "Inter-Black", Helvetica;
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Take up full width */
+    margin-bottom: 10px; /* Adjust margin */
+}
+
+/* Text styles */
+.check-your-mail-text,
+.check-your-mail-text1 {
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.28px;
+    margin-bottom: 10px; /* Reduce margin */
+}
+
+.check-your-mail-text1 {
+    text-align: center;
+}
+
+/* Email link styles */
+.check-your-mail-email-link {
+    margin-top: 10px; /* Reduce margin */
+}
+
+/* Button styles */
+.check-your-mail-btn {
+    width: 100%;
+    padding: 20px;
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+  font-size: 20px;
+  margin-top: 7px;
+    transition: background-color 0.3s ease;
+}
+
+.check-your-mail-btn:hover {
+    background-color: #ff8000;
+}
+
+/* Spam folder text styles */
+.check-your-mail-spam {
+    color: var(--Primary-1, #0071C1);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.28px;
+}
+
+/* Email icon styles */
+.check-your-mail-email-icon svg {
+    width: 51px; /* Default width */
+    height: 52px; /* Default height */
+}
+
+/* Media Queries for responsiveness */
+
+/* Adjust styles for screens up to 768px width */
+@media only screen and (max-width: 768px) {
+    .check-your-mail-container {
+        padding: 15px; /* Adjust padding for small devices */
+        align-items: center; 
+    }
+
+    .check-your-mail-content {
+        max-width: 90%; /* Adjust content width */
+    }
+}
+
+/* Adjust styles for screens up to 576px width */
+@media only screen and (max-width: 576px) {
+    .check-your-mail-container {
+       padding:15px;
+      
+    }
+
+    .check-your-mail-title {
+        font-size: 24px; /* Decrease title font size */
+         /* Add some letter spacing */
+    }
+
+    .check-your-mail-email-icon svg {
+        width: 40px; /* Decrease the size of the email icon */
+        height: 40px;
+    }
+
+.check-your-mail-btn{
+    font-size: 15px;
+    padding:10px;
+}
+
+    .check-your-mail-text,
+    .check-your-mail-text1{
+        font-size:14px;
+    }
+}

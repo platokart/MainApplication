@@ -1,0 +1,121 @@
+/* index.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+.animation-container {
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 20px;
+}
+
+.animation-heading {
+    color: var(--Primary-1, #0071C1);
+    text-align: center;
+    font-family: "Crimson Pro";
+    font-size: 92px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -3.68px;
+}
+
+.animation-paragraph {
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    margin: 10px 20px;
+    text-align: center;
+}
+
+.animation-last {
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    margin: 10px 20px;
+    text-align: center;
+}
+
+.consultant-color {
+    color: var(--Primary-2, #FF8A08);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.8px;
+}
+
+.animation-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.animation-wrapper > div {
+    width: 100%;
+    height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .animation-heading {
+        font-size: 72px;
+    }
+    .animation-paragraph, .animation-last {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .animation-heading {
+        font-size: 62px;
+    }
+    .animation-paragraph, .animation-last {
+        font-size: 16px;
+    }
+    .animation-wrapper {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .animation-heading {
+        font-size: 52px;
+    }
+    .animation-paragraph, .animation-last {
+        font-size: 14px;
+    }
+    .animation-wrapper {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .animation-heading {
+        font-size: 42px;
+    }
+    .animation-paragraph, .animation-last {
+        font-size: 12px;
+    }
+    .animation-container {
+        padding: 10px;
+        justify-content: center;
+        align-items:center;
+    }
+    .animation-wrapper {
+        max-width: 200px;
+    }
+}

@@ -1,0 +1,214 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+.thank-you-container90 {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  min-height: 100%; 
+  background: #FFF; 
+  text-align: center;
+  padding: 15px;
+  flex-direction: column;
+}
+
+.heading-container90 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.thank-you {
+  border-radius: 15px;
+  background: #FFF;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+  text-align: center; 
+  display: flex;
+  width: 100%; 
+  max-width: 528px; 
+  padding: 27px 18px;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.user-thank-you-form-heading{
+  color: var(--Primary-1, #0071C1);
+  font-family: Inter;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -1.68px;
+}
+
+.user-thank-you-name {
+  color: var(--Primary-2, #FF8A08);
+  font-family: Inter;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -1.68px;
+}
+
+.thank-you-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 7px;
+  border: 5px solid orange; 
+  padding: 5px;
+}
+
+.john-doe-name {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.96px;
+}
+
+
+.frame-div1 {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  
+.resource-operations-label {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  border: none; 
+  line-height: normal;
+  border-radius: 100px;
+  background: var(--Primary-3, #B7C9F2);
+  backdrop-filter: blur(1px);
+  padding: 10px 20px; 
+}
+
+.user-thank-you-additional-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-thank-you-additional-info p {
+  margin: 5px 0;
+}
+
+.user-thank-you-action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+.user-thank-you-span{
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.join-call {
+  border-radius: 10px;
+  background: var(--Primary-2, #FF8A08);
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  width: 120%;
+  font-size: 16px;
+  padding: 10px; 
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.64px;
+  border-width: 0;
+}
+
+
+
+.action-button {
+    border-radius: 10px;
+    display: flex;
+    width: 232px; 
+    height: 43px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .view-profile {
+    border-radius: 10px;
+    border: 1px solid var(--Primary-2, #FF8A08);
+    color: var(--Primary-2, #FF8A08);
+    display: flex;
+    width: 232px; 
+    height: 43px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+
+@media screen and (max-width: 768px) {
+  .thank-you {
+    width: 90%; 
+    padding: 20px; 
+    gap: 20px;
+  }
+
+  .image {
+    width: 80px; 
+    height: 80px; 
+    margin-bottom: 5px; 
+    border-width: 3px; 
+  }
+
+  .user-thank-you-form-heading{
+    font-size: 30px; 
+  }
+
+  .john-doe {
+    font-size: 30px; 
+  }
+
+  .john-doe-name {
+    font-size: 20px; 
+  }
+
+  .resource-operations-label {
+    font-size: 14px; 
+  }
+
+  .action-button {
+    width:120%; 
+    height: 40px; 
+    font-size: 14px; 
+  }
+  .view-profile{
+    font-size: 12px;
+  }
+}

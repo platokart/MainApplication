@@ -1,0 +1,118 @@
+.video-call-features-btn{
+    border-radius : 50%;
+    margin-right : 20px;
+    padding : 16px;
+    background : grey;
+    color : #FFF;
+    font-size : 24px;
+    cursor : pointer;
+    border: none;
+}
+
+.video-call-cut-btn{
+    border-radius : 18px;
+    margin-right : 20px;
+    padding : 16px;
+    background : #F8000F;
+    font-size : 26px;
+    color : #FFF;
+    cursor : pointer;
+}
+
+.video-call-content-card{
+    border-radius: 22px;
+    background: rgba(0, 0, 0, 0.52);
+    padding: 0;
+    margin : 20px;
+    padding: 8px;
+    height: 34px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-call-content-desc{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.recording-btn{
+    background: #FFF;
+    border: none;
+    font-size: 18px;
+    color: #F8000F;
+    padding: 0;
+    width: 18px;
+    margin-top: 4px;
+    background: transparent;
+}
+
+.chat-btns {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.chat-btn-1{
+    margin-right: 10px;
+}
+
+.popup-body{
+    display: inline-flex;
+    padding: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+}
+
+.popup-list-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.popup-list-item :hover {
+    text-decoration: underline;
+    color: var(--Primary-1, #0071C1);
+}
+
+.popup-list-content{
+    color: #2E2E30;
+    /* sub headings */
+    font-family: Quicksand;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px; /* 122.222% */
+    letter-spacing: -0.077px;
+}
+
+@media (max-width:991px){
+    .chat-btns{
+        font-size: 14px;
+        margin-right: 4px;
+    }
+}
+
+@media (max-width:576px){
+    .chat-btn-1{
+        margin-right: 6px;
+    }
+    .chat-btns{
+        margin-right: 2px;;
+    }
+    .sent-btn{
+        margin-right: 0;
+    }
+}

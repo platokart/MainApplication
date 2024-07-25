@@ -1,0 +1,93 @@
+/* App.css */
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .schedule-consultation-popup-bg-container{
+    
+  }
+
+  .schedule-consultation-popup-activate-btn{
+
+  }
+
+  .schedule-consultation-popup-heading{
+    color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -1.68px;
+  }
+
+  .schedule-consultation-popup-card{
+    margin-bottom: 10px;
+  }
+
+  .schedule-consultation-popup-form-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .schedule-consultation-popup-label{
+    color: var(--Grey-1, #191919);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.28px;
+
+  }
+
+  .schedule-consultation-popup-input{
+    border-radius: 10px;
+    background-color: #FFF;
+    font-size: 16px;
+    outline: none;
+    padding: 10px;
+  }
+
+  .schedule-consultation-popup-buttons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .schedule-consultation-popup-button{
+    background-color: var(--Primary-2, #FF8A08);
+    color: #FFF;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .schedule-consultation-popup-button:hover{
+    background-color: #FFF;
+    color: var(--Primary-2, #FF8A08);
+  }
+

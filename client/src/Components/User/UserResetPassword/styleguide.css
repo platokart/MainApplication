@@ -1,0 +1,15 @@
+:root {
+    --accent-1: rgba(231, 41, 41, 1);
+    --accent-2: rgba(33, 191, 115, 1);
+    --accent-3: rgba(255, 193, 0, 1);
+    --accent-4: rgba(126, 161, 255, 1);
+    --grey-1: rgba(25, 25, 25, 1);
+    --grey-2: rgba(48, 48, 48, 1);
+    --grey-3: rgba(124, 125, 128, 1);
+    --grey-4: rgba(248, 249, 255, 1);
+    --primary-1: rgba(0, 113, 193, 1);
+    --primary-2: rgba(255, 138, 8, 1);
+    --primary-3: rgba(183, 201, 242, 1);
+    --primary-4: rgba(154, 200, 205, 1);
+  }
+  

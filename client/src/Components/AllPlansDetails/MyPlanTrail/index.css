@@ -1,0 +1,87 @@
+.my-plan-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-left-side{
+display: flex;
+align-items: flex-start;
+margin: 25px;
+}
+
+.main-heading-my-plan{
+    color: var(--Primary-1, #0071C1);
+text-align: center;
+font-family: Inter;
+font-size: 42px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: -1.68px;
+}
+.trail-plan-container{
+    display: inline-flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 23px;
+    border-radius: 10px;
+    width: 50%;
+background: var(--Grey-3, #F8F9FF);
+box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+}
+.content-container{
+    display: flex;
+   justify-content: space-between;
+   
+}
+.left-side-content-container{
+    display: flex;
+    flex-direction: column;
+}
+.left-side-content-container p{
+    color: var(--Grey-2, #7C7D80);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+
+.right-side-content-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side-content-container p{
+    color: var(--Grey-2, #7C7D80);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.img-content-container{
+    display: flex;
+    flex-direction: row;
+}
+.image-hand{
+    margin-top: 8px;
+    margin-right: 2px;
+}
+
+.button-upgrade-plan{
+    display: flex;
+padding: 15px 20px;
+color: white;
+border-width: 0px;
+justify-content: flex-end;
+align-items: flex-end;
+gap: 10px;
+width: 15%;
+border-radius: 100px;
+background: var(--Primary-2, #FF8A08);
+}

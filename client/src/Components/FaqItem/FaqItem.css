@@ -1,0 +1,99 @@
+
+@media (min-width:992px){
+.faq-container{
+    color: var(--Primary-1, #0071C1);
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -2.16px;
+margin-left:1% ;
+}
+.faq{
+    display: flex;
+min-width: 300px;
+padding: 9px;
+height:80px;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+border-radius: 15px 15px 0px 0px;
+background: var(--Grey-3, #F8F9FF);
+margin:35px;
+}
+
+.faq h4{
+    color: var(--Accent-4, #7EA1FF);
+font-family: Inter;
+font-size: 28.5px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: -1.14px;
+width: 1164px;
+flex-shrink: 0;
+}
+
+.answer-container {
+    color: var(--Grey-2, #7C7D80);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.72px;
+    margin-left:3%;
+}
+}
+
+/*mobile view*/
+
+@media (max-width:576px){
+    .faq-container{
+        color: var(--Primary-1, #0071C1);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -2.16px;
+    width: 78%;
+   
+
+    }
+    .faq{
+        display: flex;
+        justify-content: space-between;
+    padding: 9px;
+    height:2%;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 15px 15px 0px 0px;
+    background: var(--Grey-3, #F8F9FF);
+  margin-left: 3%;
+    }
+    
+    .faq h4{
+        color: var(--Accent-4, #7EA1FF);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.14px;
+   flex-shrink: 5;
+    }
+    
+    .answer-container {
+        color: var(--Grey-2, #7C7D80);
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.72px;
+        margin-left: 3%;
+    }
+    }
