@@ -44,12 +44,12 @@ exports.sendOTP = async (req, res) => {
   try {
     // Check if the email already exists in the database
     const existingConsultant = await Consultant.findOne({ email });
-    
+
     if (existingConsultant) {
       // If the email already exists, send a response indicating that
-      return res.status(400).json({ 
-        error: "Email already registered", 
-        message: "This email is already registered. Please sign in instead."
+      return res.status(400).json({
+        error: "Email already registered",
+        message: "This email is already registered. Please sign in instead.",
       });
     }
 
@@ -60,9 +60,12 @@ exports.sendOTP = async (req, res) => {
       upperCase: false,
       specialChars: false,
     });
+    const otpDigitsOnly = otp.replace(/\D/g, "");
 
-    await sendEmailOTP(email, otp);
-    token = jwt.sign({ email, otp }, process.env.JWT_SECRET, { expiresIn: "5m" });
+    await sendEmailOTP(email, otpDigitsOnly);
+    token = jwt.sign({ email, otp: otpDigitsOnly }, process.env.JWT_SECRET, {
+      expiresIn: "5m",
+    });
     res.json({ message: "OTP sent successfully" });
   } catch (error) {
     console.error(error);
@@ -82,11 +85,15 @@ exports.verifyOTP = (req, res) => {
     if (decoded.otp !== otp) {
       return res.status(400).json({ error: "Invalid OTP" });
     } else {
-      const newToken = jwt.sign({ email: decoded.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
-      res.status(200).json({ 
-        message: "Verified successfully", 
+      const newToken = jwt.sign(
+        { email: decoded.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "1h" }
+      );
+      res.status(200).json({
+        message: "Verified successfully",
         token: newToken,
-        email: decoded.email
+        email: decoded.email,
       });
     }
   } catch (error) {
@@ -657,7 +664,7 @@ exports.showRejectedThankYou = async (req, res) => {
 exports.showBasicDetailsForm1 = async (req, res) => {
   try {
     const email = req.headers["email"]; // Getting email from the request headers
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
     }
@@ -688,7 +695,7 @@ exports.updateBasicDetails = async (req, res) => {
       instituteName,
       photo,
     } = req.body;
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -723,7 +730,7 @@ exports.updateBasicDetails = async (req, res) => {
 exports.showAdditionalDetailsForm1 = async (req, res) => {
   try {
     const email = req.headers["email"]; // Getting email from the request headers
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
     }
@@ -739,7 +746,7 @@ exports.updateAdditionalDetails = async (req, res) => {
   try {
     const email = req.headers["email"];
     const { aboutYourself, linkedinProfile, feePerSession } = req.body;
-    const consultant = await Consultant.findOne({ email:email });
+    const consultant = await Consultant.findOne({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -767,7 +774,7 @@ exports.updateAdditionalDetails = async (req, res) => {
 exports.showCriticalDetailsForm1 = async (req, res) => {
   try {
     const email = req.headers["email"]; // Getting email from the request headers
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
     }
@@ -782,7 +789,7 @@ exports.updateCriticalDetails = async (req, res) => {
   try {
     const email = req.headers["email"];
     const { makeYourAvailability, provideTimeAvailability } = req.body;
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -825,7 +832,7 @@ exports.updatePaymentDetails = async (req, res) => {
       cancelledChequeCopy,
       PANNumber,
     } = req.body;
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -1167,18 +1174,16 @@ exports.declineRequest = async (req, res) => {
   }
 };
 
-
-
 exports.getConsultantInfo = async (req, res) => {
   try {
-    const email = req.headers['email'];
+    const email = req.headers["email"];
     const consultant = await Consultant.findOne({ email });
     if (!consultant) {
-      return res.status(404).json({ message: 'Consultant not found' });
+      return res.status(404).json({ message: "Consultant not found" });
     }
     res.status(200).json(consultant);
   } catch (error) {
-    console.error('Error fetching consultant info:', error);
-    res.status(500).json({ message: 'Server error' });
+    console.error("Error fetching consultant info:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };

@@ -72,7 +72,7 @@ const OtpScreen = () => {
           <OtpInput
             value={otp}
             onChange={setOtp}
-            numInputs={6}
+            numInputs={4}
             renderSeparator={<span> </span>}
             renderInput={(props) => <input {...props} />}
             className="otp-input"
