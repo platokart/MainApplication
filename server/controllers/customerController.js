@@ -55,9 +55,9 @@ exports.sendOTP = async (req, res) => {
     console.log(existingConsultant);
     if (existingConsultant) {
       // If the email already exists, send a response indicating that
-      return res.status(400).json({
-        error: "Email already registered",
-        message: "This email is already registered. Please sign in instead.",
+      return res.status(400).json({ 
+        error: "Email already registered", 
+        message: "This email is already registered. Please sign in instead."
       });
     }
 
@@ -68,17 +68,16 @@ exports.sendOTP = async (req, res) => {
       upperCase: false,
       specialChars: false,
     });
-    const otpDigitsOnly = otp.replace(/\D/g, "");
-    await sendEmailOTP(email, otpDigitsOnly);
-    token = jwt.sign({ email, otp: otpDigitsOnly }, process.env.JWT_SECRET, {
-      expiresIn: "10m",
-    });
+
+    await sendEmailOTP(email, otp);
+    token = jwt.sign({ email, otp }, process.env.JWT_SECRET, { expiresIn: "5m" });
     res.json({ message: "OTP sent successfully" });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error processing request");
   }
 };
+
 
 exports.showOTPForm = (req, res) => {
   res.render("otpFormConsultant");
@@ -328,23 +327,21 @@ exports.getArticleById = async (req, res) => {
       return res.status(404).json({ message: "Article not found" });
     }
     // Assuming you also need to fetch comments here; modify as needed
-    const comments = await Comment.find({ articleId: articleId }).populate(
-      "Replies"
-    );
-    if (!comments) {
-      return res.status(201).json({ message: "No Comments Yet" });
+    const comments = await Comment.find({ articleId: articleId }).populate('Replies');
+    if(!comments){
+      return res.status(201).json({message : "No Comments Yet"});
     }
     article.comments = comments; // Attach comments to the article object
     console.log(article);
-    res.status(200).send({ ok: true, article, comments });
+    res.status(200).send({ok:true,article,comments});
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
 exports.postCommentsOnArticle = async (req, res) => {
-  const { content, userId, articleId } = req.body;
-  console.log(req.body);
+  const { content,userId,articleId } = req.body;
+  console.log(req.body)
   try {
     const user = await Customer.findById(userId);
     console.log(user);
@@ -356,7 +353,7 @@ exports.postCommentsOnArticle = async (req, res) => {
     });
     await newComment.save();
     // res.redirect(`/home/about/articles/${req.params.articleId}`); // Corrected: Changed single quotes to backticks for template string
-    res.status(200).send({ ok: true, message: "Comment Posted Successfully" });
+    res.status(200).send({ok:true, message:"Comment Posted Successfully"});
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -383,14 +380,12 @@ exports.replyToComment = async (req, res) => {
     comment.Replies.push(newReply);
     console.log(comment);
     await comment.save();
-
+    
     // await Comment.findByIdAndUpdate(commentId, {
     //   $push: { Replies: newReply._id }
     // });
 
-    res
-      .status(200)
-      .send({ ok: true, message: "Reply for the comment successfully posted" });
+    res.status(200).send({ ok: true, message: "Reply for the comment successfully posted" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -728,7 +723,7 @@ exports.getConsultantDetails = async (req, res) => {
   try {
     const consultant = await Consultant.findById(consultantId); // Use findById for a single document
     console.log(consultant);
-
+    
     const reviews = await Review.find({ consultantId }).populate(
       "userId",
       "firstName lastName email"
@@ -750,20 +745,15 @@ exports.getConsultantDetails = async (req, res) => {
       });
     }
 
-    const totalRatings = Object.values(ratingsCount).reduce(
-      (sum, count) => sum + count,
-      0
-    );
-    const averageRating =
-      totalRatings === 0 ? 0 : (totalSum / totalRatings).toFixed(1); // Calculate average and format to one decimal
+    const totalRatings = Object.values(ratingsCount).reduce((sum, count) => sum + count, 0);
+    const averageRating = totalRatings === 0 ? 0 : (totalSum / totalRatings).toFixed(1); // Calculate average and format to one decimal
 
-    res
-      .status(200)
-      .json({ ratings, ratingsCount, reviews, consultant, averageRating });
+    res.status(200).json({ ratings, ratingsCount, reviews, consultant, averageRating });
   } catch (error) {
     res.status(500).json({ message: "Server error", error });
   }
 };
+
 
 exports.getUpcomingConsultations = async (req, res) => {
   const customerId = req.params.id;

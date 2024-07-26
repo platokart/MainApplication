@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Peer from "simple-peer";
 import io from "socket.io-client";
 import Popup from "reactjs-popup";
-import {useParams,useNavigate} from 'react-router-dom'
+import { useParams, useNavigate } from "react-router-dom";
 //video call end,setting btn
 import { MdOutlineCallEnd, MdSettings } from "react-icons/md";
 //video cam,call initialte btn
@@ -15,8 +15,7 @@ import { RiRecordCircleFill } from "react-icons/ri";
 import { GrGallery } from "react-icons/gr";
 import { LuSendHorizonal } from "react-icons/lu";
 import ReportAbusePage from "../ReportAbuse";
-import ReportIssuePage from './../ReportIssuePage/index';
-
+import ReportIssuePage from "./../ReportIssuePage/index";
 
 import {
   VideoCallBgContainer,
@@ -40,12 +39,11 @@ import {
 
 import "./index.css";
 
-import process from "process/browser";
 const VideoCallScreenC = () => {
-  const {customerEmail,consultantEmail}=useParams();
+  const { customerEmail, consultantEmail } = useParams();
   const socket = useRef(io.connect("http://localhost:5001")).current;
   //msg btn clicked
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [isClicked, setClicked] = useState(false);
   const [me, setMe] = useState("");
   const [stream, setStream] = useState(null);
@@ -157,12 +155,12 @@ const VideoCallScreenC = () => {
 
   const leaveCall = () => {
     setCallEnded(true);
-    navigate('/accept-consultation');
+    navigate("/accept-consultation");
     if (connectionRef.current) {
       connectionRef.current.destroy();
     }
     window.location.reload();
-     // Optionally reload to reset state
+    // Optionally reload to reset state
   };
 
   const sendMessage = () => {
@@ -200,37 +198,63 @@ const VideoCallScreenC = () => {
     }
   };
 
-  const videoContainerClass = isClicked ? 'is-clicked-video-container' : 'video-container'
-
+  const videoContainerClass = isClicked
+    ? "is-clicked-video-container"
+    : "video-container";
 
   return (
     <VideoCallBgContainer>
       <VideoCallHeading>Platokart</VideoCallHeading>
       <VideoCallBgCard msgbtnClicked={isClicked}>
         <VideoCallingMainContainer msgbtnClicked={isClicked}>
-            {/** video container */}
-            <div className={`${videoContainerClass}`}>
+          {/** video container */}
+          <div className={`${videoContainerClass}`}>
             {/* This ours video */}
-            <div className={`${isClicked ? 'clicked-straming-video' : 'streaming-video'}`}>
-                {<video className={`${isClicked ? 'clicked-video-player' : 'video-player'}`}  playsInline muted ref={myVideo} autoPlay />}
+            <div
+              className={`${
+                isClicked ? "clicked-straming-video" : "streaming-video"
+              }`}
+            >
+              {
+                <video
+                  className={`${
+                    isClicked ? "clicked-video-player" : "video-player"
+                  }`}
+                  playsInline
+                  muted
+                  ref={myVideo}
+                  autoPlay
+                />
+              }
             </div>
             {/* This others video */}
-           <div className={`${isClicked ? 'clicked-straming-video' : 'streaming-video'}`}>
-                {callAccepted && !callEnded && (
-                <video className={`${isClicked ? 'clicked-video-player' : 'video-player'}`}  playsInline ref={userVideo} autoPlay />
-                )}
-            </div> 
+            <div
+              className={`${
+                isClicked ? "clicked-straming-video" : "streaming-video"
+              }`}
+            >
+              {callAccepted && !callEnded && (
+                <video
+                  className={`${
+                    isClicked ? "clicked-video-player" : "video-player"
+                  }`}
+                  playsInline
+                  ref={userVideo}
+                  autoPlay
+                />
+              )}
+            </div>
           </div>
           <VideoCallFeaturesIcons>
             {/** order */}
             {/** message button */}
-             <VideoCallFeaturesBtn
+            <VideoCallFeaturesBtn
               className="video-call-features-btn"
               onClick={() => setClicked(!isClicked)}
               btnClicked={isClicked}
             >
               <FaMessage />
-            </VideoCallFeaturesBtn> 
+            </VideoCallFeaturesBtn>
             {/** video on and off button */}
             {/* <button onClick={toggleVideo}>{isVideoOn ? 'Turn Video Off' : 'Turn Video On'}</button> */}
             <VideoCallFeaturesBtn
@@ -238,12 +262,14 @@ const VideoCallScreenC = () => {
               onClick={toggleVideo}
               btnClicked={isVideoOn}
             >
-              {isVideoOn===true ? <IoMdVideocam /> : <FaVideoSlash />}
+              {isVideoOn === true ? <IoMdVideocam /> : <FaVideoSlash />}
             </VideoCallFeaturesBtn>
             {/* Calling */}
             {/**call initialte or cut  button*/}
-            {callAccepted===true && callEnded!==true  ? (
+            {callAccepted === true && callEnded !== true ? (
               <VideoCallCutBtn onClick={leaveCall}>
+                {" "}
+                {/*end call*/}
                 <MdOutlineCallEnd />
               </VideoCallCutBtn>
             ) : (
@@ -268,7 +294,10 @@ const VideoCallScreenC = () => {
             {/**settings btn */}
             <Popup
               trigger={
-                <VideoCallFeaturesBtn className="video-call-features-btn" btnClicked={settingsBtnClicked}>
+                <VideoCallFeaturesBtn
+                  className="video-call-features-btn"
+                  btnClicked={settingsBtnClicked}
+                >
                   <MdSettings />
                 </VideoCallFeaturesBtn>
               }
@@ -277,7 +306,10 @@ const VideoCallScreenC = () => {
               btnClicked={settingsBtnClicked}
             >
               <div className="popup-body">
-                <li className="popup-list-item" onClick={()=>navigate('/report-abuse')}>
+                <li
+                  className="popup-list-item"
+                  onClick={() => navigate("/report-abuse")}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
@@ -300,7 +332,10 @@ const VideoCallScreenC = () => {
                   </svg>
                   <p className="popup-list-content">Report abuse</p>
                 </li>
-                <li className="popup-list-item"onClick={()=>navigate('/report-issue')}>
+                <li
+                  className="popup-list-item"
+                  onClick={() => navigate("/report-issue")}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
@@ -329,7 +364,7 @@ const VideoCallScreenC = () => {
             </Popup>
           </VideoCallFeaturesIcons>
         </VideoCallingMainContainer>
-         {isClicked && (
+        {isClicked && (
           <ChatContainer msgbtnClicked={isClicked}>
             <div>
               {messages.map((msg, index) => (
@@ -354,10 +389,10 @@ const VideoCallScreenC = () => {
               </button>
             </MsgInputContainer>
           </ChatContainer>
-        )} 
+        )}
       </VideoCallBgCard>
-        
-        {/** buttons container */}
+
+      {/** buttons container */}
     </VideoCallBgContainer>
   );
 };
