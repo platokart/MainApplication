@@ -250,7 +250,7 @@ const ConsultationRequest = () => {
     if (consultationTopicRef.current) {
       consultationTopicRef.current.focus();
     }
-  }, [consultationTopic]);
+  }, []);
 
   useEffect(() => {
     if (additionalInfoRef.current) {
@@ -258,7 +258,7 @@ const ConsultationRequest = () => {
     }
   }, [additionalInfo]);
 
-  const handleConsultationTopic = e =>{
+  const handleConsultationTopic = (e) =>{
     setConsultationTopic(e.target.value)
   }
 
@@ -266,81 +266,83 @@ const ConsultationRequest = () => {
     return (
       <>
         <UserNavbar />
-        <div className="consultation-request-top-container">
-          <div className="consultation-request-consultation-form">
-            <h2 className="consultation-request-consultation-heading">
-              Consultation Request
-            </h2>
-            <form onSubmit={handleConsultationRequest}>
-              <div className="consultation-request-form-group">
-                <label htmlFor="topic1">
-                  Consultation Topic (Please tell us about what you want to consult on)
-                </label>
-                <textarea
-                  id="topic1"
-                  rows="4"
-                  className="input-field"
-                  value={consultationTopic}
-                  onChange={handleConsultationTopic}
-                  ref={consultationTopicRef}
-                  dir="ltr"
-                ></textarea>
-              </div>
-              <div className="consultation-request-form-group">
-                <label htmlFor="industry">Industry:</label>
-                <div className="input-with-icon">
-                  <select id="industry" name="industry" className="input-field" value={industry} onChange={(e) => setIndustry(e.target.value)}>
-                    {industries.map(e => (
-                      <option key={e.industry} value={e.industry}>{e.industry}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className="consultation-request-form-group">
-                <label htmlFor="function">Function:</label>
-                <div className="input-with-icon">
-                  <select id="function" name="function" className="input-field" value={func} onChange={(e) => setFunction(e.target.value)}>
-                    {functions.map(e => (
-                      <option value={e.func} key={e.func}>{e.func}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className="consultation-request-form-group">
-                <label htmlFor="expertise">Expertise Area:</label>
-                <div className="input-with-icon">
-                  <select id="expertise" name="expertise" className="input-field" value={expertiseArea} onChange={(e) => setExpertiseArea(e.target.value)}>
-                    {expertises.map(e => (
-                      <option value={e.value} key={e.value}>{e.value}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className="consultation-request-form-group">
-                <label htmlFor="additional-info">Additional Information:</label>
-                <textarea
-                  id="additional-info"
-                  name="additional-info"
-                  rows="4"
-                  className="input-field"
-                  placeholder="Not strictly required"
-                  value={additionalInfo}
-                  onChange={(e) => setAdditionalInfo(e.target.value)}
-                  ref={additionalInfoRef}
-                ></textarea>
-              </div>
-              <div className="consultation-request-button">
-                <button className="consultation-btn-request" type="submit">
-                  Request Consultation
-                </button>
-              </div>
-            </form>
+    <div className="consultation-request-top-container">
+      <div className="consultation-request-consultation-form">
+        <h2 className="consultation-request-consultation-heading">
+          Consultation Request
+        </h2>
+        <form onSubmit={handleConsultationRequest}>
+          <div className="consultation-request-form-group">
+        
+            <label htmlFor="topic1">
+              Consultation Topic (Please tell us about what you want to consult on)
+            </label>
+            <textarea
+              id="topic1"
+              rows="4"
+              className="input-field"
+              value={consultationTopic}
+              onChange={handleConsultationTopic}
+              ref={consultationTopicRef}
+              dir="1tr" // Inline style to ensure LTR direction
+            ></textarea>
           </div>
-          <div className="consultation-request-image">
-            <img src={consultation_request} className="image1" alt="consultation" />
+          <div className="consultation-request-form-group">
+            <label htmlFor="industry">Industry:</label>
+            <div className="input-with-icon">
+              <select id="industry" name="industry" className="input-field" value={industry} onChange={(e) => setIndustry(e.target.value)}>
+                {industries.map(e => (
+                  <option key={e.industry} value={e.industry}>{e.industry}</option>
+                ))}
+              </select>
+            </div>
           </div>
-        </div>
-        <FooterSeaWireFooter />
+          <div className="consultation-request-form-group">
+            <label htmlFor="function">Function:</label>
+            <div className="input-with-icon">
+              <select id="function" name="function" className="input-field" value={func} onChange={(e) => setFunction(e.target.value)}>
+                {functions.map(e => (
+                  <option value={e.func} key={e.func}>{e.func}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="consultation-request-form-group">
+            <label htmlFor="expertise">Expertise Area:</label>
+            <div className="input-with-icon">
+              <select id="expertise" name="expertise" className="input-field" value={expertiseArea} onChange={(e) => setExpertiseArea(e.target.value)}>
+                {expertises.map(e => (
+                  <option value={e.value} key={e.value}>{e.value}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="consultation-request-form-group">
+            <label htmlFor="additional-info">Additional Information:</label>
+            <textarea
+              id="additional-info"
+              name="additional-info"
+              rows="4"
+              className="input-field"
+              placeholder="Not strictly required"
+              value={additionalInfo}
+              onChange={(e) => setAdditionalInfo(e.target.value)}
+              ref={additionalInfoRef}
+              style={{ direction: 'ltr' }}  // Inline style to ensure LTR direction
+              ></textarea>
+          </div>
+          <div className="consultation-request-button">
+            <button className="consultation-btn-request" type="submit">
+              Request Consultation
+            </button>
+          </div>
+        </form>
+      </div>
+      <div className="consultation-request-image">
+        <img src={consultation_request} className="image1" alt="consultation" />
+      </div>
+    </div>
+    <FooterSeaWireFooter />
       </>
     );
   };

@@ -6,7 +6,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 //image compression
-import imageCompression from 'browser-image-compression';
 
 const designations = [
   {
@@ -347,33 +346,10 @@ const DetailsForm = () => {
     e.preventDefault();
     
     try {
-      const authorizationCode = localStorage.getItem('consultantAuth');
+      const authorizationCode = localStorage.getItem('authToken');
       const consultantEmail = localStorage.getItem('consultantEmail');
-      console.log(consultantEmail);
-
-      let parsedToken = null;
-      if (authorizationCode) {
-        try {
-          parsedToken = JSON.parse(authorizationCode);
-        } catch (error) {
-          console.error('Error parsing token:', error);
-        }
-      }
-
-      // Ensure all variables are defined and initialized
-      console.log(firstName);
-      console.log(lastName);
-      console.log(base64Photo);
-      console.log(contact);
-      console.log(organizationName);
-      console.log(designation);
-      console.log(department);
-      console.log(experience);
-      console.log(highestEducation);
-      console.log(industrySelected);
-      console.log(selectedExpertises);
-      console.log(yrOfPassing);
-      console.log(universityName); // assuming this variable is also needed
+      console.log("Consultant Email:", consultantEmail);
+      
 
       const formData = {
         email: consultantEmail,
@@ -400,20 +376,16 @@ const DetailsForm = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${parsedToken.token}`,
           },
           body: JSON.stringify(formData),
         }
       );
       
-      console.log(response);
-      const {data}= await response.json();
-      console.log(data);
-      console.log(response.ok);
-      if (response.ok=== true) {
-        navigate("/consultant/additional-details");
+      if (response.ok) {
+        navigate("/consultant/set-password");
       } else {
         console.error('Failed to submit form:', response.statusText);
+        console.error('Failed to submit form:', response.error);
       }
 
     } catch (error) {

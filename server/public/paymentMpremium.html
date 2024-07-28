@@ -116,12 +116,13 @@
           order_id: order.id,
           handler: async function (response) {
             const expiryDate = new Date();
-            expiryDate.setMonth(expiryDate.getMonth() + 1); // Set expiry date to one month from now
+            expiryDate.setMonth(expiryDate.getMonth() + 1); // Set expiry date to one monthh from now
             const data = {
               orderId: response.razorpay_order_id,
               paymentId: response.razorpay_payment_id,
               signature: response.razorpay_signature,
               Addcredits: 25,
+              Plan: "Monthly Premium",
               expiryDate: expiryDate.toISOString(),
             };
 

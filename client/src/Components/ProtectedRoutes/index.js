@@ -10,20 +10,20 @@ const ProtectedRoute = ({ userType }) => {
     return <div>Loading...</div>;
   }
 
-  const isAuthenticated = auth.token && (auth.user || auth.consultant);
+  const isAuthenticated = auth.token && auth.user;
 
-  if (userType === 'user' && !isAuthenticated) {
+  if (userType === "user" && !isAuthenticated) {
     console.log("User not authenticated, redirecting to user signin");
     return <Navigate to="/user/signin" state={{ from: location }} replace />;
   }
 
-  if (userType === 'consultant' && !isAuthenticated) {
-    console.log("Consultant not authenticated, redirecting to consultant signin");
-    return <Navigate to="/consultant/signin" state={{ from: location }} replace />;
-  }
+  // if (userType === 'consultant' && !isAuthenticated) {
+  //   console.log("Consultant not authenticated, redirecting to consultant signin");
+  //   return <Navigate to="/consultant/signin" state={{ from: location }} replace />;
+  // }
 
   console.log(`${userType} authenticated, rendering protected content`);
   return <Outlet />;
-}
+};
 
 export default ProtectedRoute;

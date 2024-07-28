@@ -1,9 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const addOneMonth = () => {
+  const date = new Date();
+  date.setMonth(date.getMonth() + 1);
+  return date;
+};
+
 const CreditSchema = new mongoose.Schema({
-  amount: {
-    type: Number,
+  Plan: {
+    type: String,
     required: true,
+    default: "One free credit",
   },
   addedAt: {
     type: Date,
@@ -13,6 +20,7 @@ const CreditSchema = new mongoose.Schema({
   expiryDate: {
     type: Date,
     required: true,
+    default: addOneMonth,
   },
 });
 const customerSchema = new Schema(
@@ -83,7 +91,10 @@ const customerSchema = new Schema(
       type: Number,
       default: 1,
     },
-    addedCredits: [CreditSchema],
+    addedCredits: {
+      type: [CreditSchema],
+      default: () => [new mongoose.model("Credit", CreditSchema)()],
+    },
   },
   {
     timestamps: true,

@@ -16,11 +16,24 @@ exports.paymentForm = () => {
 
 exports.myplan = async (req, res) => {
   try {
-    const currentOrder = await Order.findOne({
+    const customer = await Customer.findOne({
       userId: req.params.userId,
-      status: "paid",
-    }).sort({ validTill: -1 });
-    res.json(currentOrder);
+    }).select("credits addedCredits"); // Select only relevant fields
+
+    if (!customer) {
+      return res.status(404).json({ error: "Customer not found" });
+    }
+
+    const creditDetails = customer.addedCredits.map((credit) => ({
+      Plan: credit.Plan,
+      addedAt: credit.addedAt,
+      expiryDate: credit.expiryDate,
+    }));
+
+    res.json({
+      credits: customer.credits,
+      addedCredits: creditDetails,
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -61,13 +74,15 @@ exports.createOrder = async (req, res) => {
   }
 };
 exports.verifyThePayment = async (req, res) => {
-  const { orderId, paymentId, signature, Addcredits } = req.body;
+  const { orderId, paymentId, signature, Addcredits, Plan, expiryDate } =
+    req.body;
 
   console.log("Received verification request:", {
     orderId,
     paymentId,
     signature,
     Addcredits,
+    Plan,
     expiryDate,
   });
 
@@ -108,7 +123,7 @@ exports.verifyThePayment = async (req, res) => {
 
       customer.credits = (customer.credits || 0) + Addcredits;
       customer.addedCredits.push({
-        amount: Addcredits,
+        Plan: Plan,
         addedAt: new Date(),
         expiryDate: new Date(expiryDate),
       });

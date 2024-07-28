@@ -1,22 +1,19 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-
-
 const consultantSchema = new mongoose.Schema({
-  email:{
-    type:String,
-    required:true,
+  email: {
+    type: String,
+    required: true,
   },
   contact: {
     type: String,
     // required: true,
     unique: true,
   },
-  
-  basicdetails:[
+
+  basicdetails: [
     {
-      
       firstName: {
         type: String,
         required: true,
@@ -31,30 +28,30 @@ const consultantSchema = new mongoose.Schema({
         unique: true,
       },
       orgName: {
-         type: String ,
+        type: String,
         required: true,
       },
       industry: {
         type: Array,
         required: true,
       },
-      designation: { 
-        type: String , 
+      designation: {
+        type: String,
         required: true,
       },
       functionName: {
-         type: String,
-          required: true,
-         },
-      skills:{
-         type: Array,
-          required: true,
-         },
+        type: String,
+        required: true,
+      },
+      skills: {
+        type: Array,
+        required: true,
+      },
       yearsOfExperience: {
         type: String,
         required: true,
       },
-      
+
       highestEducation: {
         type: String,
         required: true,
@@ -71,106 +68,116 @@ const consultantSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-    }
+    },
   ],
-  
-  additionalDetails :[
+
+  additionalDetails: [
     {
       aboutYourself: {
         type: String,
         required: true,
+        default: "enter",
       },
       resumeAttachment: {
         type: String,
-        // required: true,
+        // required: true
         default: "file",
       },
-    
+
       linkedinProfile: {
         type: String,
         required: true,
+        default: "enter",
       },
-      
+
       feePerSession: {
         type: String,
         required: true,
+        default: "enter",
       },
-    
+
       lastCTC: {
         type: String,
         // required: true,
+        default: "file",
       },
       compensationDetails: {
         type: String,
         // required: true,
-        default: "file",
+        default: "enter",
       },
       appointmentLetter: {
         type: String,
         // required: true,
         default: "file",
       },
-    }
+    },
   ],
 
-  criticalDetails:[
+  criticalDetails: [
     {
       makeYourAvailability: {
         type: Array,
         required: true,
+        default: "enter",
       },
-    
+
       provideTimeAvailability: {
         type: String,
         required: true,
+        default: "enter",
       },
-    }
-  ],
- paymentDetails:[
-  {
-    bankAccountNumber: { 
-      type: String,
-       required: true,
-       },
-    ifscCode: { 
-      type: String,
-      required: true,
-     },
-    bankName: { 
-      type: String,
-      required: true,
-     },
-    bankBranch: {
-       type: String ,
-       required: true,
-      },
-    cancelledCheque: {
-      type: String,
-      // required: true,
-      default: "file",
-     },
-    panNumber: {
-       type: String,
-       required: true,
-       },
-  }
- ],
-
- passwordDetails: [
-  {
-    password: {
-      type: String,
-      required: true,
     },
-  }
- ],
-  
+  ],
+  paymentDetails: [
+    {
+      bankAccountNumber: {
+        type: String,
+        required: true,
+        default: "enter",
+      },
+      ifscCode: {
+        type: String,
+        required: true,
+        default: "enter",
+      },
+      bankName: {
+        type: String,
+        required: true,
+        default: "enter",
+      },
+      bankBranch: {
+        type: String,
+        required: true,
+        default: "enter",
+      },
+      cancelledCheque: {
+        type: String,
+        // required: true,
+        default: "file",
+      },
+      panNumber: {
+        type: String,
+        required: true,
+        default: "enter",
+      },
+    },
+  ],
+
+  passwordDetails: [
+    {
+      password: {
+        type: String,
+        required: true,
+        default: "",
+      },
+    },
+  ],
+
   registrationStatus: {
     type: String,
     default: "pending",
   },
-
-  
 });
 
 consultantSchema.pre("save", async function (next) {

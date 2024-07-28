@@ -1,4 +1,11 @@
 /* index.css */
+.input-field {
+  direction: ltr; /* Ensure left-to-right text direction */
+}
+.input-field {
+  direction: ltr !important; /* Force left-to-right text direction */
+}
+
 
 /* Top container */
 .consultation-request-top-container {
@@ -123,6 +130,17 @@ textarea {
   height: 100px;
 }
 
+.input-field {
+  direction: ltr; /* Ensure left-to-right text direction */
+}
+/* Add this CSS */
+textarea, select, input {
+  direction: ltr !important;
+}
+.input-field {
+  direction: ltr !important; /* Force left-to-right text direction */
+}
+
 
 @media (max-width: 1200px) {
   .consultation-request-consultation-form {
@@ -133,6 +151,10 @@ textarea {
     width: 300px;
     height: 400px;
   }
+}
+
+.input-field {
+  direction: ltr; /* Ensure left-to-right text direction */
 }
 
 @media (max-width: 991px) {
@@ -166,6 +188,18 @@ textarea {
   }
 }
 
+.input-field {
+  direction: ltr; /* Ensure left-to-right text direction */
+}
+/* Add this CSS */
+textarea, select, input {
+  direction: ltr !important;
+}
+.input-field {
+  direction: ltr !important; /* Force left-to-right text direction */
+}
+
+
 @media (max-width: 600px) {
   .consultation-request-consultation-form {
     padding: 10px;
@@ -186,4 +220,15 @@ textarea {
   .consultation-request-consultation-heading {
     font-size: 28px;
   }
+  .input-field {
+    direction: ltr; /* Ensure left-to-right text direction */
+  }
+  
+}
+/* Add this CSS */
+textarea, select, input {
+  direction: ltr !important;
+}
+.input-field {
+  direction: ltr !important; /* Force left-to-right text direction */
 }

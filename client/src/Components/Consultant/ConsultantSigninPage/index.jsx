@@ -8,14 +8,14 @@ import { IoEyeOff } from "react-icons/io5";
 const SignInPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [consultantAuth, setAuth] = useAuth();
+  const [auth, setAuth] = useAuth();
   const [errorMsg,setErrorMsg] = useState("");
-  const navigate = useNavigate();
   const [passwordHidden, setPasswordHidded] = useState(true);
-
+  
   const passwordIcon = passwordHidden ? <IoEye size={26} /> : <IoEyeOff size={26} />;
   const passwordType = passwordHidden ? 'password' : 'type'
-
+  
+  const navigate=useNavigate();
   const onClickSignIn=async(email,password)=> {
     localStorage.setItem('consultantEmail',email);
     try {
@@ -29,18 +29,17 @@ const SignInPage = () => {
       });
       console.log(response);
       const data= await response.json();
-      console.log(data);
       if(response.status===401){
         setErrorMsg(data.error);
-        return
       }
-      localStorage.setItem("consultantToken", data.token);
-      localStorage.setItem("consultantId", data.id);
+      console.log(data);
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("id", data.id);
     
 
-// In your onClickSignIn function, after successful login:
-setAuth({ token: data.token, consultant: { id: data.id } ,consultantEmail:email});
-      if(response.ok) {
+// In your onClickSignIn function, after successful login
+// setAuth({ token: data.token, consultant: { id: data.id } ,consultantEmail:email});
+      if(response.status===200) {
         //have to redirect to the consultant homepage
         navigate('/consultant/home-page');
       }

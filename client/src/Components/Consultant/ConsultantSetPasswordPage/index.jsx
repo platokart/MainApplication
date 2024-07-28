@@ -3,7 +3,7 @@ import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
-
+//hi
 const ConsultantSetPasswordPage = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -37,8 +37,6 @@ const ConsultantSetPasswordPage = () => {
 
   const handlePassword = async (e) => {
     e.preventDefault();
-    setErrorMessage("");
-
     const validationError = validatePassword(password);
     if (validationError) {
       setErrorMessage(validationError);
@@ -51,22 +49,14 @@ const ConsultantSetPasswordPage = () => {
     }
 
     try {
-      const authorizationCode = localStorage.getItem('consultantAuth');
+      const token = localStorage.getItem('authToken');
       const consultantEmail = localStorage.getItem('consultantEmail');
       console.log(consultantEmail);
 
-      let parsedToken = null;
-      if (authorizationCode) {
-        try {
-          parsedToken = JSON.parse(authorizationCode);
-        } catch (error) {
-          console.error('Error parsing token:', error);
-          setErrorMessage("Authentication error. Please try again.");
-          return;
-        }
-      }
+      
 
       const formData = {
+        email: consultantEmail,
         password: password,
       }
 
@@ -78,18 +68,17 @@ const ConsultantSetPasswordPage = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${parsedToken.token}`,
+            "Authorization": `Bearer ${token}`,
+
           },
           body: JSON.stringify(formData),
         }
       );
-      
+
+      console.log(response);
       if (response.ok === true) {
         navigate("/consultant/signin");
-      } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.message || "An error occurred. Please try again.");
-      }
+      } 
     } catch (error) {
       console.error("Error submitting form:", error);
       setErrorMessage("An error occurred. Please try again.");

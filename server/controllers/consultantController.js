@@ -13,9 +13,26 @@ const { response } = require("../app");
 const stream = require("stream");
 dotenv.config({ path: "./config.env" });
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-let token = "";
-let newToken = "";
+const generateToken = (payload, expiresIn) => {
+  return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn });
+};
 
+exports.verifyToken = (req, res, next) => {
+  const token = req.headers["authorization"];
+  if (!token) {
+    return res.status(403).send("A token is required for authentication");
+  }
+
+  try {
+    const bearerToken = token.split(" ")[1];
+    const decoded = jwt.verify(bearerToken, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    console.error("Token verification failed:", err.message);
+    return res.status(401).send("Invalid Token");
+  }
+};
 const sendEmailOTP = async (email, otp) => {
   const msg = {
     to: email,
@@ -33,27 +50,19 @@ const sendEmailOTP = async (email, otp) => {
   }
 };
 
-exports.showEmailForm = (req, res) => {
-  // Render the emailForm view from the htmlForms directory
-  res.render("emailFormConsultant");
-};
-
 exports.sendOTP = async (req, res) => {
   const { email } = req.body;
 
   try {
-    // Check if the email already exists in the database
     const existingConsultant = await Consultant.findOne({ email });
-    
+
     if (existingConsultant) {
-      // If the email already exists, send a response indicating that
-      return res.status(400).json({ 
-        error: "Email already registered", 
-        message: "This email is already registered. Please sign in instead."
+      return res.status(400).json({
+        error: "Email already registered",
+        message: "This email is already registered. Please sign in instead.",
       });
     }
 
-    // If the email doesn't exist, proceed with OTP generation and sending
     const otp = OTP.generate(6, {
       digits: true,
       alphabets: false,
@@ -62,34 +71,39 @@ exports.sendOTP = async (req, res) => {
     });
 
     await sendEmailOTP(email, otp);
-    token = jwt.sign({ email, otp }, process.env.JWT_SECRET, { expiresIn: "5m" });
-    res.json({ message: "OTP sent successfully" });
+    const token = generateToken({ email, otp }, "1h");
+
+    res.json({ message: "OTP sent successfully", token });
   } catch (error) {
-    console.error(error);
+    console.error("Error processing request:", error.message);
     res.status(500).send("Error processing request");
   }
 };
 
-exports.showOTPForm = (req, res) => {
-  res.render("otpFormConsultant");
-};
-
 exports.verifyOTP = (req, res) => {
   const { otp } = req.body;
+  const token = req.headers["authorization"]?.split(" ")[1];
+
+  if (!token) {
+    return res
+      .status(403)
+      .json({ error: "A token is required for verification" });
+  }
+
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log(decoded);
     if (decoded.otp !== otp) {
       return res.status(400).json({ error: "Invalid OTP" });
-    } else {
-      const newToken = jwt.sign({ email: decoded.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
-      res.status(200).json({ 
-        message: "Verified successfully", 
-        token: newToken,
-        email: decoded.email
-      });
     }
+
+    const newToken = generateToken({ email: decoded.email }, "1h");
+    res.status(200).json({
+      message: "Verified successfully",
+      token: newToken,
+      email: decoded.email,
+    });
   } catch (error) {
+    console.error("Error verifying OTP:", error.message);
     res.status(500).json({ error: "Error verifying OTP" });
   }
 };
@@ -99,22 +113,11 @@ exports.getPicture = async (req, res) => {
   res.status(200).json({ consultant });
 };
 
-exports.showBasicDetailsForm = (req, res) => {
-  res.render("basicDetailsForm");
-};
-
 exports.handleBasicDetails = async (req, res) => {
-  console.log(req.body);
+  const { email } = req.body;
+  const token = req.headers["authorization"]?.split(" ")[1];
+
   try {
-    if (!token) {
-      return res.status(401).send("Unauthorized access");
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log(decoded);
-    const email = decoded.email;
-    console.log(email);
-
     const {
       firstName,
       lastName,
@@ -131,6 +134,8 @@ exports.handleBasicDetails = async (req, res) => {
       photo,
     } = req.body;
 
+    console.log("Received form data:", req.body);
+
     const existingUser = await Consultant.findOne({ email });
     if (existingUser) {
       return res
@@ -139,18 +144,61 @@ exports.handleBasicDetails = async (req, res) => {
     }
 
     const basicDetails = {
-      ...req.body,
+      firstName,
+      lastName,
+      contact,
+      orgName,
+      industry,
+      designation,
+      functionName,
+      skills,
+      yearsOfExperience,
+      highestEducation,
+      yearOfPassing,
+      instituteName,
+      photo,
     };
+    const additionalDetails = [
+      {
+        aboutYourself: "enter",
+        resumeAttachment: "file",
+        linkedinProfile: "enter",
+        feePerSession: "enter",
+        lastCTC: "file",
+        compensationDetails: "enter",
+        appointmentLetter: "file",
+      },
+    ];
 
-    const consultant = new Consultant({ basicdetails: [basicDetails], email });
+    const criticalDetails = [
+      {
+        makeYourAvailability: "enter",
+        provideTimeAvailability: "enter",
+      },
+    ];
+
+    const paymentDetails = [
+      {
+        bankAccountNumber: "enter",
+        ifscCode: "enter",
+        bankName: "enter",
+        bankBranch: "enter",
+        cancelledCheque: "file",
+        panNumber: "enter",
+      },
+    ];
+
+    const consultant = new Consultant({
+      basicdetails: [basicDetails],
+      email,
+      additionalDetails,
+      criticalDetails,
+      paymentDetails,
+    });
     await consultant.save();
     res.status(200).json({ message: "Success" });
-
-    console.log(consultant);
-
-    // res.redirect('/register/additional-details');
   } catch (error) {
-    console.error("Error handling basic details:", error);
+    console.error("Error handling basic details:", error.message);
     res.status(500).send("An error occurred while handling basic details");
   }
 };
@@ -196,13 +244,6 @@ async function uploadFileToGridFS(base64Data, filename) {
     throw error;
   }
 }
-
-exports.showAdditionalDetailsForm = async (req, res) => {
-  const consultant = await Consultant.findOne({
-    "basicdetails.contact": req.body.contact,
-  });
-  res.render("additionalDetailsForm", { consultant });
-};
 
 exports.handleAdditionalDetails = async (req, res) => {
   try {
@@ -307,12 +348,6 @@ exports.handleCriticalDetails = async (req, res) => {
     res.status(500).send("An error occurred while handling critical details");
   }
 };
-exports.showPaymentDetailsForm = async (req, res) => {
-  const consultant = await Consultant.findOne({
-    "basicdetails.contact": req.body.contact,
-  });
-  res.render("paymentDetailsForm", { consultant });
-};
 
 exports.handlePaymentDetails = async (req, res) => {
   try {
@@ -361,104 +396,54 @@ exports.handlePaymentDetails = async (req, res) => {
   }
 };
 
-exports.showSetPasswordForm = async (req, res) => {
-  const consultant = await Consultant.findOne({
-    "basicdetails.contact": req.body.contact,
-  });
-  res.render("setPasswordForm", { consultant });
-};
+// exports.showSetPasswordForm = async (req, res) => {
+//   const consultant = await Consultant.findOne({
+//     "basicdetails.contact": req.body.contact,
+//   });
+//   res.render("setPasswordForm", { consultant });
+// };
 
 exports.handleSetPassword = async (req, res) => {
+  const token = req.headers["authorization"]?.split(" ")[1];
+  const { email, password } = req.body;
+
   try {
-    if (!token) {
-      return res.status(401).send("Unauthorized access");
+    if (!email || !password) {
+      return res.status(400).send("Email and password are required");
     }
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log(decoded);
-    const email = decoded.email;
-    console.log(email);
-    const { password } = req.body;
-    const passwordDetails = {
-      password: await bcrypt.hash(password, 10),
-    };
 
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Find the consultant by email
     const consultant = await Consultant.findOne({ email });
-    consultant.passwordDetails.push(passwordDetails);
 
-    const isRegistrationComplete =
-      consultant.basicdetails.length > 0 &&
-      consultant.basicdetails.every(
-        (detail) =>
-          detail.firstName &&
-          detail.lastName &&
-          detail.contact &&
-          detail.orgName &&
-          detail.industry &&
-          detail.designation &&
-          detail.functionName &&
-          detail.skills &&
-          detail.yearsOfExperience &&
-          detail.highestEducation &&
-          detail.yearOfPassing &&
-          detail.instituteName &&
-          detail.photo
-      ) &&
-      consultant.additionalDetails.length > 0 &&
-      consultant.additionalDetails.every(
-        (detail) =>
-          detail.aboutYourself &&
-          detail.resumeAttachment &&
-          detail.linkedinProfile &&
-          detail.feePerSession &&
-          detail.lastCTC &&
-          detail.compensationDetails &&
-          detail.appointmentLetter
-      ) &&
-      consultant.criticalDetails.length > 0 &&
-      consultant.criticalDetails.every(
-        (detail) =>
-          detail.makeYourAvailability && detail.provideTimeAvailability
-      ) &&
-      consultant.paymentDetails.length > 0 &&
-      consultant.paymentDetails.every(
-        (detail) =>
-          detail.bankAccountNumber &&
-          detail.ifscCode &&
-          detail.bankName &&
-          detail.bankBranch &&
-          detail.cancelledCheque &&
-          detail.panNumber
-      ) &&
-      consultant.passwordDetails.length > 0 &&
-      consultant.passwordDetails.every((detail) => detail.password);
-
-    if (isRegistrationComplete) {
-      consultant.registrationStatus = "completed";
+    // Check if the consultant exists
+    if (!consultant) {
+      return res.status(404).send("Consultant not found");
     }
 
-    await consultant.save();
-    res.status(200).json({ message: "Success" });
+    // Set the password details
+    consultant.passwordDetails = { password: hashedPassword };
 
-    // res.redirect('/registration-success');
+    // Save the consultant document
+    await consultant.save();
+
+    res.status(200).json({ message: "Success" });
   } catch (error) {
-    console.error("Error handling set password:", error);
+    console.error("Error handling set password:", error.message);
     res.status(500).send("An error occurred while handling set password");
   }
 };
 
 exports.login = async (req, res) => {
   const { email, password } = req.body;
-
   try {
     const consultant = await Consultant.findOne({ email });
-    console.log(consultant);
-    const _id = { consultant };
-
     if (!consultant) {
       return res.status(401).json({ error: "Invalid email or password" });
     }
 
-    // Check if passwordDetails exists and has at least one element
     if (
       !consultant.passwordDetails ||
       consultant.passwordDetails.length === 0
@@ -467,43 +452,22 @@ exports.login = async (req, res) => {
     }
 
     const storedPassword = consultant.passwordDetails[0].password;
-
     const isMatch = await bcrypt.compare(password, storedPassword);
 
     if (!isMatch) {
       return res.status(401).json({ error: "Invalid email or password" });
-    } else {
-      const loginToken = jwt.sign({ email, _id }, process.env.JWT_SECRET, {
-        expiresIn: "1h",
-      });
-      console.log(loginToken);
-      res.status(200).json({
-        message: "Login successful",
-        token: loginToken,
-        id: consultant._id,
-      });
     }
+
+    const loginToken = generateToken({ email, id: consultant._id }, "1h");
+    res.status(200).json({
+      message: "Login successful",
+      token: loginToken,
+      id: consultant._id,
+    });
   } catch (error) {
     console.error("Error during login:", error.message);
     res.status(500).json({ error: "Server error" });
   }
-};
-
-exports.verifyToken = (req, res, next) => {
-  const token = req.headers["consultantAuthorization"];
-  console.log("Authorization Header:", token);
-  if (!token) {
-    return res.status(403).send("A token is required for authentication");
-  }
-
-  try {
-    const bearerToken = token.split(" ")[1];
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-  } catch (err) {
-    return res.status(401).send("Invalid Token");
-  }
-  return next();
 };
 
 exports.getReviewsAndRating = async (req, res) => {
@@ -657,7 +621,7 @@ exports.showRejectedThankYou = async (req, res) => {
 exports.showBasicDetailsForm1 = async (req, res) => {
   try {
     const email = req.headers["email"]; // Getting email from the request headers
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
     }
@@ -688,7 +652,7 @@ exports.updateBasicDetails = async (req, res) => {
       instituteName,
       photo,
     } = req.body;
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -723,7 +687,7 @@ exports.updateBasicDetails = async (req, res) => {
 exports.showAdditionalDetailsForm1 = async (req, res) => {
   try {
     const email = req.headers["email"]; // Getting email from the request headers
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
     }
@@ -739,7 +703,7 @@ exports.updateAdditionalDetails = async (req, res) => {
   try {
     const email = req.headers["email"];
     const { aboutYourself, linkedinProfile, feePerSession } = req.body;
-    const consultant = await Consultant.findOne({ email:email });
+    const consultant = await Consultant.findOne({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -767,7 +731,7 @@ exports.updateAdditionalDetails = async (req, res) => {
 exports.showCriticalDetailsForm1 = async (req, res) => {
   try {
     const email = req.headers["email"]; // Getting email from the request headers
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
     }
@@ -782,7 +746,7 @@ exports.updateCriticalDetails = async (req, res) => {
   try {
     const email = req.headers["email"];
     const { makeYourAvailability, provideTimeAvailability } = req.body;
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -825,7 +789,7 @@ exports.updatePaymentDetails = async (req, res) => {
       cancelledChequeCopy,
       PANNumber,
     } = req.body;
-    const consultant = await Consultant.find({ email:email });
+    const consultant = await Consultant.find({ email: email });
 
     if (!consultant) {
       return res.status(404).json({ error: "Consultant not found" });
@@ -1167,18 +1131,19 @@ exports.declineRequest = async (req, res) => {
   }
 };
 
-
-
 exports.getConsultantInfo = async (req, res) => {
   try {
-    const email = req.headers['email'];
-    const consultant = await Consultant.findOne({ email });
+    const consultantId = req.params.id;
+
+    const consultant = await Consultant.findById(consultantId);
+
     if (!consultant) {
-      return res.status(404).json({ message: 'Consultant not found' });
+      return res.status(404).json({ message: "Consultant not found" });
     }
+
     res.status(200).json(consultant);
   } catch (error) {
-    console.error('Error fetching consultant info:', error);
-    res.status(500).json({ message: 'Server error' });
+    console.error("Error fetching consultant info:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };

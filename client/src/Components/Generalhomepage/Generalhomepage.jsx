@@ -69,7 +69,6 @@ const Generalhomepage = () => {
                 <h1 className="welcome-page-heading company-name">Platokart</h1>
                 <p className="welcome-page-description">Your home for all type of business consultations.</p>
                 <div className="welcome-page-btn-container">
-                    <button className="welcome-page-button">Get Started</button>
                 </div>
             </div>
             <img
@@ -176,7 +175,6 @@ const Generalhomepage = () => {
                 Join our Consultation
                 <br /> Services
               </h1>
-              <button>Schedule a Consultation</button>
             </div>
           </div>
 

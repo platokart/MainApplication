@@ -1,263 +1,142 @@
-.my-plan-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+  
+/* Overall container style */
+.credit-details-container {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 30px auto;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.arrow-left-side{
-display: flex;
-align-items: flex-start;
-margin: 25px;
+/* Add a dynamic background animation */
+.credit-details-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  animation: pulse 8s infinite ease-in-out;
+  z-index: 0;
 }
 
-.main-heading-my-plan{
-    color: var(--Primary-1, #0071C1);
-text-align: center;
-font-family: Inter;
-font-size: 42px;
-font-style: normal;
-font-weight: 900;
-line-height: normal;
-letter-spacing: -1.68px;
-}
-.trail-plan-container{
-    display: inline-flex;
-    padding: 20px;
-    flex-direction: column;
-    gap: 23px;
-    border-radius: 10px;
-    width: 50%;
-background: var(--Grey-3, #F8F9FF);
-box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
-}
-.content-container{
-    display: flex;
-   justify-content: space-between;
-   
-}
-.left-side-content-container{
-    display: flex;
-    flex-direction: column;
-}
-.left-side-content-container h5{
-    color: var(--Grey-2, #7C7D80);
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-.left-side-content-container p{
-    color: var(--Primary-1, #0071C1);
-font-family: Inter;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-decoration-line: underline;
+/* Page title style */
+.page-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 2s ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
-.right-side-content-container{
-    display: flex;
-    flex-direction: column;
+/* Summary section for total credits */
+.credits-summary {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.right-side-content-container p{
-    color: var(--Grey-2, #7C7D80);
-font-family: Inter;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.total-credits {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 600;
 }
 
-
-.button-upgrade-plan{
-    display: flex;
-padding: 15px 20px;
-color: white;
-border-width: 0px;
-justify-content: flex-end;
-align-items: flex-end;
-gap: 10px;
-width: 15%;
-border-radius: 100px;
-background: var(--Primary-2, #FF8A08);
+.label {
+  display: block;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.history-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.history-container h1{
-    margin-right: 39%;
-    color: var(--Primary-1, #0071C1);
-font-family: Inter;
-font-size: 30px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}
-.history-1{
-    display: flex;
-    padding: 12.831px 17.108px 11.94px 17.108px;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 338.506px;
-   width: 50%;
-   margin: 10px;
-   justify-content: space-around;
-    border-radius: 21.385px;
-border: 0.535px solid var(--Gray-50, #EBEDF2);
-background: var(--Grey-3, #F8F9FF);
-box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
-}
-.left-history-container{
-    display: flex;
-}
-.left-history-container p{
-    margin-top: 20px;
-    margin-left: 10px;
-}
-.right-history-container{
-    display: flex;
-}
-.right-history-container p{
-    margin-top: 20px;
-    margin-left: 10px;
+.credit-amount {
+  font-size: 3rem;
+  color: #fff;
 }
 
-@media(max-width:576px){
-    .my-plan-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .arrow-left-side{
-    display: flex;
-    align-items: flex-start;
-    margin: 25px;
-    }
-    
-    .main-heading-my-plan{
-        color: var(--Primary-1, #0071C1);
-    text-align: center;
-    font-family: Inter;
-    font-size: 42px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    letter-spacing: -1.68px;
-    }
-    .trail-plan-container{
-        display: inline-flex;
-        padding: 20px;
-        flex-direction: column;
-        gap: 23px;
-        border-radius: 10px;
-        width: 50%;
-    background: var(--Grey-3, #F8F9FF);
-    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
-    }
-    .content-container{
-        display: flex;
-       justify-content: space-between;
-       
-    }
-    .left-side-content-container{
-        display: flex;
-        flex-direction: column;
-    }
-    .left-side-content-container h5{
-        color: var(--Grey-2, #7C7D80);
-        font-family: Inter;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-    }
-    .left-side-content-container p{
-        color: var(--Primary-1, #0071C1);
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration-line: underline;
-    }
-    
-    .right-side-content-container{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .right-side-content-container p{
-        color: var(--Grey-2, #7C7D80);
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    }
-    
-    
-    .button-upgrade-plan{
-        display: flex;
-    padding: 15px 20px;
-    color: white;
-    border-width: 0px;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 10px;
-    width: 15%;
-    border-radius: 100px;
-    background: var(--Primary-2, #FF8A08);
-    }
-    
-    .history-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .history-container h1{
-        margin-right: 39%;
-        color: var(--Primary-1, #0071C1);
-    font-family: Inter;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    }
-    .history-1{
-        display: flex;
-        padding: 12.831px 17.108px 11.94px 17.108px;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 338.506px;
-       width: 50%;
-       margin: 10px;
-       justify-content: space-around;
-        border-radius: 21.385px;
-    border: 0.535px solid var(--Gray-50, #EBEDF2);
-    background: var(--Grey-3, #F8F9FF);
-    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
-    }
-    .left-history-container{
-        display: flex;
-    }
-    .left-history-container p{
-        margin-top: 20px;
-        margin-left: 10px;
-    }
-    .right-history-container{
-        display: flex;
-    }
-    .right-history-container p{
-        margin-top: 20px;
-        margin-left: 10px;
-    }
+/* Credits list section */
+.credits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.credit-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.5s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.credit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.plan-title {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.date-details {
+  color: #666;
+  margin: 5px 0;
+}
+
+/* No credits message */
+.no-credits {
+  text-align: center;
+  color: #ff6f61;
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
 }

@@ -15,6 +15,324 @@
   flex-direction: column;
 }
 
+.reply-reference {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #25D366;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.replying-to {
+  background-color: #e1f3fb;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.clear-image-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes highlightFade {
+  0% { background-color: #d8eef8; }
+  100% { background-color: transparent; }
+}
+
+/* General button styling */
+.options-menu button,
+.delete-options button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.options-menu button:hover,
+.delete-options button:hover {
+  background-color: #e8e8e8;
+}
+
+/* Active effect */
+.options-menu button:active,
+.delete-options button:active {
+  background-color: #d8d8d8;
+}
+
+/* Specific styling for delete buttons */
+.delete-options button {
+  color: #d9534f; /* Red color for delete actions */
+}
+
+.delete-options button:hover {
+  background-color: #d9534f;
+  color: white;
+}
+
+/* Container styling */
+.options-menu,
+.delete-options {
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Spacing between options */
+.options-menu > *:not(:last-child),
+.delete-options > *:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+/* Style for the more options button */
+.options-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.options-button:hover {
+  color: #333;
+}
+
+/* Popup styling */
+.popup-content {
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+.highlight {
+  animation: highlightFade 2s ease-out;
+}
+.replying-to button {
+  background: none;
+  border: none;
+  color: #075e54;
+  cursor: pointer;
+  font-weight: bold;
+}
+.reply-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.reply-author {
+  font-weight: bold;
+  color: #25D366;
+  margin-bottom: 2px;
+}
+
+.reply-text {
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message-text {
+  margin-top: 8px;
+}
+
+
+.chat-message-wrapper {
+  display: flex;
+  margin-bottom: 15px;
+  width: 100%;
+  flex-direction: row-reverse; 
+  justify-content: flex-start; /* Align to the start (right) for current user */
+}
+
+.unread-indicator {
+
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+
+
+
+.image-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.image-popup-content {
+  max-width: 300px; /* Decreased from 90% */
+  max-height: 300px; /* Decreased from 90% */
+  width: 300px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  border-radius: 50%; /* Makes it circular */
+  overflow: hidden; /* Ensures the image stays within the circular boundary */
+  background-color: #fff; /* Add a background color in case the image doesn't fill the circle */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow for better visibility */
+}
+
+.image-popup-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the entire circle */
+}
+
+.image-popup-content.full-view {
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: scroll;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
+
+.unread-divider {
+
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+  border-radius: 15px;
+}
+
+.chat-screen-history {
+  overflow-y: auto;
+  height: calc(100vh - 200px); /* Adjust based on your layout */
+}
+.image-popup-content.full-view img {
+  object-fit: contain;
+}
+
+/* Add this to ensure the message bubble doesn't stretch full width */
+.chat-message {
+  max-width: 70%;
+}
+
+/* Optional: Add some space between the profile pic and message */
+.profile-pic {
+  margin: 0 10px;
+}
+
+.chat-message {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+ 
+}
+.unread-divider {
+ 
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeInOut 2s forwards;
+}
+.chat-message-wrapper {
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+.unread-divider {
+ 
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.chat-screen-history {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+.reply-content {
+  font-size: 0.9em;
+}
+
+.reply-author {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.reply-text {
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .drop-down-container {
   display: flex;
   justify-content: space-between;
@@ -188,7 +506,7 @@
   }
   
   .badge {
-    background-color: green;
+    
     color: white;
     border-radius: 50%;
     padding: 2px 8px;
@@ -203,7 +521,7 @@
   }
   
   .chat-header {
-    background-color: #e9f4fb;
+    
     
     border-bottom: 1px solid #ccc;
   }
@@ -224,7 +542,7 @@
   }
   
   .chat-message {
-    background-color: #e9f4fb ;
+   
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -388,37 +706,64 @@
   }
   
   .send-button {
-    background-color: #007bff;
+
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
   }
-  
-  .send-button:hover {
-    background-color: #0056b3;
-  }
+
 
   .drop-down-btn{
     font-size: 32px;
   }
 
   .chat-screen-history {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     overflow-y: auto;
-    height: calc(100% - 120px); /* Adjust based on your navbar and input container heights */
   }
   
-  .chat-message {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 20px;
+  .chat-message-wrapper {
+    display: flex;
+    margin-bottom: 15px;
     width: 100%;
   }
   
+  .chat-message-wrapper.current-user {
+    justify-content: flex-end;
+  }
+  
+  .chat-message {
+    max-width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+  
+  }
+
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+  }
+  
+  /* For current user, move profile pic to the right */
+  .chat-message-wrapper.current-user .profile-pic {
+    order: 1;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  
+  /* Ensure content is ordered correctly for current user */
+  .chat-message-wrapper.current-user .chat-message {
+    order: 0;
+  }
+  
+ 
   .chat-message-header {
     margin-bottom: 10px;
   }
@@ -464,7 +809,7 @@
   .chat-screen-msg-input-container {
     display: flex;
     padding: 15px;
-    background-color: #f5f5f5;
+ 
     border-top: 1px solid #e0e0e0;
   }
   
@@ -527,6 +872,12 @@
   
   .chat-message-content {
     margin-bottom: 10px;
+  }
+
+  .chat-message-wrapper {
+    display: flex;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
   }
   
   .chat-media {
@@ -631,4 +982,84 @@
 
   .community-bg-con{
     background: #FFF;
+  }
+
+
+  .menu-button {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    
+    background-color: #0071C1;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .community-panels-container {
+    width: 300px;
+    /* ... other existing styles ... */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-button {
+      display: block; /* Show on small screens */
+    }
+  
+    .community-panels-container {
+      position: fixed;
+      left: -300px; /* Hide off-screen by default */
+      top: 0;
+      bottom: 0;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+  
+    .community-panels-container.open {
+      left: 0; /* Show when open */
+    }
+  }
+
+  .community-panels-container {
+    width: 300px;
+    background-color: #FFF;
+    padding: 10px;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .community-panels-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: translateX(-100%);
+      z-index: 1000;
+      width: 80%; /* Adjust width for small screens */
+      max-width: 300px;
+    }
+  
+    .community-panels-container.open {
+      transform: translateX(0);
+    }
+  }
+  
+  .dropdown-wrapper {
+    width: 100%;
+  }
+  
+  .industry-options-list {
+    max-height: none; /* Remove any max-height restriction */
+  }
+  
+  .community-options-con {
+    word-break: break-word; /* Ensure long words don't overflow */
   }

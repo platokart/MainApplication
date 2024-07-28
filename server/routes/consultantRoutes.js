@@ -2,19 +2,11 @@ const express = require("express");
 const router = express.Router();
 const consultantController = require("../controllers/consultantController");
 
-router.get("/email", consultantController.showEmailForm);
 router.post("/email", consultantController.sendOTP);
-router.get("/otp", consultantController.showOTPForm);
 router.post("/otp", consultantController.verifyOTP);
-router.get(
-  "/register/basic-details",
-  consultantController.showBasicDetailsForm
-);
+
 router.post("/register/basic-details", consultantController.handleBasicDetails);
-router.get(
-  "/register/additional-details",
-  consultantController.showAdditionalDetailsForm
-);
+
 router.post(
   "/register/additional-details",
   consultantController.handleAdditionalDetails
@@ -27,21 +19,18 @@ router.post(
   "/register/critical-details",
   consultantController.handleCriticalDetails
 );
-router.get(
-  "/register/payment-details",
-  consultantController.showPaymentDetailsForm
-);
-router.get("/pic/:id",consultantController.getPicture);
+
+router.get("/pic/:id", consultantController.getPicture);
 router.post(
   "/register/payment-details",
   consultantController.handlePaymentDetails
 );
-router.get("/register/set-password", consultantController.showSetPasswordForm);
+// router.get("/register/set-password", consultantController.showSetPasswordForm);
 router.post("/register/set-password", consultantController.handleSetPassword);
 router.post("/login", consultantController.login);
 router.get("/home", consultantController.homepage);
 //router.get("/home/consultations",consultantController.pendingConsultations);
-//router.post("/home/consultations",videoCallChatController.acceptedConsultation);
+//router.post("/home/consultations",videoCallChatController.acceptedConsultation);;
 
 router.post("/forgot-password", consultantController.forgotPassword);
 router.get("/reset-password/:token", consultantController.verifyResetToken);
@@ -55,7 +44,10 @@ router.get(
   "/consultationrequests/:consultantEmail",
   consultantController.consultationRequests
 );
-router.post("/consultationrequests/:requestId/accept", consultantController.acceptRequest);
+router.post(
+  "/consultationrequests/:requestId/accept",
+  consultantController.acceptRequest
+);
 //router.post("/consultationrequests/:requestId/decline", declineRequest);
 
 router.get("/thankYou", consultantController.thankyou);
@@ -84,10 +76,7 @@ router.patch(
   consultantController.updateCriticalDetails
 );
 
-router.get(
-  "/edit/payment-details",
-  consultantController.showBasicDetailsForm1
-);
+router.get("/edit/payment-details", consultantController.showBasicDetailsForm1);
 router.patch(
   "/edit/payment-details",
   consultantController.updatePaymentDetails
@@ -108,8 +97,7 @@ router.get(
   consultantController.getPreviousConsultations
 );
 
-
-router.get('/consultants/:id', consultantController.getConsultantInfo);
+router.get("/consultants/:id", consultantController.getConsultantInfo);
 module.exports = router;
 
 module.exports = router;

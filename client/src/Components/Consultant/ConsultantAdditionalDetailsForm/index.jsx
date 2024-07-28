@@ -39,19 +39,6 @@ const DetailsForm = () => {
       const consultantEmail = localStorage.getItem('consultantEmail');
       console.log(consultantEmail);
 
-      let parsedToken = null;
-      if (authorizationCode) {
-        try {
-          parsedToken = JSON.parse(authorizationCode);
-        } catch (error) {
-          console.error('Error parsing token:', error);
-        }
-      }
-
-     
-       
-
-
       const formData = {
         aboutYourself:consultantDescription,
         resumeAttachment:base64Resume,
@@ -70,7 +57,6 @@ const DetailsForm = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${parsedToken.token}`,
           },
           body: JSON.stringify(formData),
         }

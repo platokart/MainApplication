@@ -7,14 +7,14 @@ const NewAccountPage = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const getEmailForm = async (email, setEmail) => {
+  const getEmailForm = async (email) => {
     try {
       const response = await fetch('http://localhost:5000/consultant/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: email }),
+        body: JSON.stringify({ email }),
       });
 
       const data = await response.json();
@@ -28,9 +28,10 @@ const NewAccountPage = () => {
       } else {
         setEmail("");
         localStorage.setItem('consultantEmail', email);
+        localStorage.setItem('authToken', data.token);
         navigate("/consultant/otp");
       }
-    } catch(error) {
+    } catch (error) {
       console.error('Error submitting form:', error);
       setError("An error occurred. Please try again.");
     }
@@ -68,7 +69,7 @@ const NewAccountPage = () => {
             <button 
               className="new-account-page-details-proceed-btn" 
               type="button" 
-              onClick={() => getEmailForm(email, setEmail)}
+              onClick={() => getEmailForm(email)}
             >
               Proceed
             </button>
